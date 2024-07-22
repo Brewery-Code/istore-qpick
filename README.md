@@ -1,0 +1,2 @@
+# istore-qpick
+Educational project
