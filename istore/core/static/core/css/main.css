@@ -112,7 +112,7 @@ h6 {
 body {
   background-color: #eaeaea;
   font-family: Montserrat, sans-serif;
-  font-style: 17px;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.23;
 }
@@ -124,24 +124,89 @@ body {
   overflow: hidden;
 }
 
-main {
-  flex: 1 1 100%;
-}
-
 .container {
   width: 100%;
   max-width: 1110px;
   margin: 0 auto;
 }
 
+main {
+  flex: 1 1 100%;
+}
+
 .footer-container {
+  position: relative;
   height: 149px;
   background-color: #ffffff;
   border-radius: 30px 30px 0px 0px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
 }
-.footer-container__left-content {
+.footer-container .footer-content {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 174px;
+}
+.footer-container .footer-content__left-content {
   display: flex;
   flex-basis: 50%;
-  gap: 233px;
+  justify-content: end;
+}
+.footer-container .footer-content__logo {
+  position: absolute;
+  top: 29px;
+  left: 31px;
+}
+.footer-container .footer-content__menu li {
+  padding-bottom: 10px;
+}
+.footer-container .footer-content__menu-item {
+  font-weight: 400;
+  color: #000000;
+  transition: color 0.3s;
+}
+.footer-container .footer-content__menu-item:hover {
+  color: #ffa542;
+}
+.footer-container .footer-content__right-content {
+  display: flex;
+  flex-basis: 50%;
+  gap: 135px;
+  align-items: center;
+}
+.footer-container .footer-content__conditions {
+  font-weight: 400;
+  margin: 0 0 36px 0;
+}
+.footer-container .footer-content__conditions a {
+  color: #000000;
+}
+.footer-container .footer-content__lang {
+  display: flex;
+}
+.footer-container .footer-content__lang-menu {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  gap: 15px;
+  margin-left: 10px;
+}
+.footer-container .footer-content__lang-item {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #000000;
+  transition: color 0.3s;
+}
+.footer-container .footer-content__lang-item:hover {
+  font-weight: 700;
+  color: #ffa542;
+}
+.footer-container .footer-content__social-icons {
+  display: flex;
+  gap: 17px;
+  position: absolute;
+  top: 29px;
+  right: 31px;
 }/*# sourceMappingURL=main.css.map */
