@@ -112,6 +112,9 @@ h6 {
 body {
   background-color: #eaeaea;
   font-family: Montserrat, sans-serif;
+  font-style: 17px;
+  font-weight: 600;
+  line-height: 1.23;
 }
 
 .wrapper {
