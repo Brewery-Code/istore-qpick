@@ -134,6 +134,32 @@ main {
   margin: 0 auto;
 }
 
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.header-container__left-content {
+  display: flex;
+  align-items: center;
+}
+.header-container__left-content-phone-icon {
+  padding: 0 15px 0 65px;
+}
+.header-container__right-content {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.menu__list {
+  display: flex;
+}
+.menu__list img {
+  padding: 0 0 0 5px;
+}
+
 .footer-container {
   height: 149px;
   background-color: #ffffff;
