@@ -49,15 +49,42 @@
         <footer>
             <div class="container">
                 <div class="footer-container">
-                    <div class="footer-container__left-content">
-                        <img src="{% static 'core/images/Logo.svg' %}" alt="">
-                        <ul>
-                            <li><a href="#">Избранное</a></li>
-                            <li><a href="#">Корзина</a></li>
-                            <li><a href="#">Контакты</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-container__right-content">
+                    <div class="footer-content">
+                        <div class="footer-content__left-content">
+                            <div class="footer-content__logo">
+                                <img src="{% static 'core/images/Logo.svg' %}" alt="">
+                            </div>
+
+                            <ul class="footer-content__menu">
+                                <li><a class="footer-content__menu-item" href="#">Избранное</a></li>
+                                <li><a class="footer-content__menu-item" href="#">Корзина</a></li>
+                                <li><a class="footer-content__menu-item" href="#">Контакты</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="footer-content__right-content">
+                            <div class="footer-content__info">
+                                <div class="footer-content__conditions">
+                                    <a href="#">Условия сервиса</a>
+                                </div>
+                                <div class="footer-content__lang">
+                                    <img src="{% static 'core/images/lang.svg' %}" alt="">
+                                    <ul class="footer-content__lang-menu">
+                                        <li><a class="footer-content__lang-item" href="#">Каз</a></li>
+                                        <li><a class="footer-content__lang-item" href="#">Ru</a></li>
+                                        <li><a class="footer-content__lang-item" href="#">Eng</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer-content__social-icons">
+                                <a href="#"><img src="{% static 'core/images/Instagram.svg' %}" alt="instagram"
+                                        width="30px" height="30px"></a>
+                                <a href="#"><img src="{% static 'core/images/Telegram.svg' %}" alt="Telegram"
+                                        width="30px" height="30px"></a>
+                                <a href="#"><img src="{% static 'core/images/Whatsapp.svg' %}" alt="Watsapp"
+                                        width="30px" height="30px"></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
