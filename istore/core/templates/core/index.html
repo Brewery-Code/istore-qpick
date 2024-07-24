@@ -1,7 +1,19 @@
 {% extends 'base.html' %}
 {% block main %}
+{% load static %}
 <section>
-    <div class="container">Section 1</div>
+    <div class="container">
+        <div class="advertising-container">
+            <div class="advertising-block">
+                <div class="advertising-block__title">
+                    Аксессуары для Iphone 13 Pro Max
+                </div>
+                <div class="advertising-block__img">
+                    <img src="{% static 'core/images/iphone-ad.svg' %}" alt="iphone-img">
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <section>
     <div class="container">Section 2</div>
