@@ -5,22 +5,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>QPICK</title>
     <link type="text/css" href="{% static 'core/css/main.css' %}" rel="stylesheet" />
 </head>
 
 <body>
     <div class="wrapper">
-        <header>
+        <header class="header">
             <div class="container">
-                <nav></nav>
+                <div class="header-container">
+                    <div class="header-container__left-content">
+                        <img src="{% static 'core/images/Logo.svg' %}" alt="logo-img">
+                        <img class="header-container__left-content-phone-icon"
+                            src="{% static 'core/images/phone-icon.svg' %}" alt="phone-img">
+                        <nav class="menu">
+                            <div class="menu__list">
+                                <p>Выбрать модель телефона</p>
+                                <img src="{% static 'core/images/header-arrow.svg' %}" alt="arrow-img">
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="header-container__right-content">
+                        <a href=""><img src="{% static 'core/images/like-icon.svg' %}" alt=""></a>
+                        <a href=""><img src="{% static 'core/images/basket-icon.svg' %}" alt=""></a>
+                    </div>
+                </div>
             </div>
         </header>
         <main>
             {% block main %}
             {% endblock %}
         </main>
-        <footer id="footer">
+        <footer>
             <div class="container">
                 <div class="footer-container">
                     <div class="footer-content">
@@ -64,8 +80,7 @@
             </div>
         </footer>
     </div>
-
-    <script src="{% static 'core/js/footer-hidden.js' %}"></script>
 </body>
+<script src="{% static 'core/js/header.js' %}"></script>
 
 </html>
