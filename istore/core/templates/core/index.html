@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block main %}
 {% load static %}
-<section>
+<section class="section hero-section" id="hero-section">
     <div class="container">
         <div class="advertising-container">
             <div class="advertising-block">
@@ -15,13 +15,158 @@
         </div>
     </div>
 </section>
-<section>
-    <div class="container">Section 2</div>
+<section class="section" id="cases">
+    <div class="container">
+        <div class="cases-container">
+            <div class="cases-container__text">
+                <p>Чехлы</p>
+            </div>
+            <ul class="cases-container__list">
+                <li>
+                    <article>
+                        <div class="cases-container__item">
+                            <a href="#">
+                                <div class="cases-container__card">
+                                    <div class="cases-container__img">
+                                        <img src="{% static 'core/images/mellow-white.jpeg' %}" alt="#" width="151px"
+                                            height="292px">
+                                    </div>
+                                    <div class="cases-container__card-title">
+                                        <h4>Стеклянные</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <div class="cases-container__item">
+                            <a href="#">
+                                <div class="cases-container__card">
+                                    <div class="cases-container__img">
+                                        <img src="{% static 'core/images/mellow-yellow.jpeg' %}" alt="#" width="151px"
+                                            height="292px">
+                                    </div>
+                                    <div class="cases-container__card-title">
+                                        <h4>Силиконовые</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <div class="cases-container__item">
+                            <a href="#">
+                                <div class="cases-container__card">
+                                    <div class="cases-container__img">
+                                        <img src="{% static 'core/images/mellow-black.jpeg' %}" alt="#" width="151px"
+                                            height="292px">
+                                    </div>
+                                    <div class="cases-container__card-title">
+                                        <h4>Кожаные</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </div>
 </section>
-<section>
-    <div class="container">Section 3</div>
+<section class="section" id="headphones">
+    <div class="container">
+        <div class="headphones-container">
+            <div class="headphones-container__text">
+                <p>Наушники</p>
+            </div>
+            <div class="headphones-block">
+                <ul class="headphones-block__list">
+                    {% for item in headphones %}
+                    <li>
+                        <article>
+                            <div class="headphones-block__item">
+                                <div class="headphones-block__card">
+                                    <div class="headphones-block__card-img">
+                                        <div class="headphones-block__card-like">
+                                            <button class="heart-button" type="button">
+                                                <svg class="heart-button__icon-like" width="20px" height="18px">
+                                                    <use href="{% static 'core/images/icons.svg' %}#icon-like">
+                                                    </use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <a href="#">
+                                            <img src="{{item.image.url}}" alt="#" width="219px" height="237px">
+                                        </a>
+                                    </div>
+                                    <div class="headphones-block__card-text">
+                                        <a class="headphones-block__card-title" href="#">
+                                            <h4>{{item.name}}</h4>
+                                        </a>
+                                        <p class="headphones-block__card-price">{{item.price}} $</p>
+                                        <div class="headphones-block__star-rating">
+                                            <span class="headphones-block__card-star">&#9733;</span>
+                                            <span class="headphones-block__card-rating-value">4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
-<section>
-    <div class="container">Section 4</div>
+<section class="section wireles-headphones-section" id="wireles-headphones">
+    <div class="container">
+        <div class="headphones-container">
+            <div class="headphones-container__text">
+                <p>Беспроводные наушники</p>
+            </div>
+            <div class="headphones-block">
+                <ul class="headphones-block__list">
+                    {% for item in headphones %}
+                    <li>
+                        <article>
+                            <div class="headphones-block__item">
+                                <div class="headphones-block__card">
+                                    <div class="headphones-block__card-img">
+                                        <div class="headphones-block__card-like">
+                                            <button class="heart-button" type="button">
+                                                <svg class="heart-button__icon-like" width="20px" height="18px">
+                                                    <use href="{% static 'core/images/icons.svg' %}#icon-like"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <a href="#">
+                                            <img src="{{item.image.url}}" alt="#" width="219px" height="237px">
+                                        </a>
+                                    </div>
+
+                                    <div class="headphones-block__card-text">
+                                        <a class="headphones-block__card-title" href="#">
+                                            <h4>{{item.name}}</h4>
+                                        </a>
+                                        <p class="headphones-block__card-price">{{item.price}} $</p>
+                                        <div class="headphones-block__star-rating">
+                                            <span class="headphones-block__card-star">&#9733;</span>
+                                            <span class="headphones-block__card-rating-value">4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock %}

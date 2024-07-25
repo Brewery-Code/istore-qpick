@@ -1,0 +1,47 @@
+.cases-container {
+    display: block;
+
+    &__text {
+        color: $categories-name-color;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    &__list {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    &__item &__card {
+        transition: transform 0.3s;
+    }
+
+    &__item &__card:hover {
+        transform: scale(1.06);
+    }
+
+    &__card {
+        width: 350px;
+        height: 407px;
+        text-align: center;
+        padding: 25px 100px 50px 100px;
+        background-color: $section-background-color;
+        border-radius: 30px;
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    &__img {
+        padding-bottom: 20px;
+    }
+
+    &__card-title {
+        color: $base-font-color;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 21px;
+    }
+
+
+}

@@ -67,12 +67,24 @@
                                 </div>
                             </div>
                             <div class="footer-content__social-icons">
-                                <a href="#"><img src="{% static 'core/images/Instagram.svg' %}" alt="instagram"
-                                        width="30px" height="30px"></a>
-                                <a href="#"><img src="{% static 'core/images/Telegram.svg' %}" alt="Telegram"
-                                        width="30px" height="30px"></a>
-                                <a href="#"><img src="{% static 'core/images/Whatsapp.svg' %}" alt="Watsapp"
-                                        width="30px" height="30px"></a>
+                                <a href="#">
+                                    <svg class="social-link" width="30px" height="30px">
+                                        <use href="{% static 'core/images/icons.svg' %}#icon-instagram">
+                                        </use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg class="social-link" width="30px" height="30px">
+                                        <use href="{% static 'core/images/icons.svg' %}#icon-telegram">
+                                        </use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg class="social-link" width="30px" height="30px">
+                                        <use href="{% static 'core/images/icons.svg' %}#icon-whatsapp">
+                                        </use>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     </div>
