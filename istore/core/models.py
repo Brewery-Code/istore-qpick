@@ -32,6 +32,7 @@ class Headphones(models.Model):
     image = models.ImageField(upload_to='proudcts/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    rating = models.DecimalField(max_digits=3, decimal_places=1 ,null=True, blank=True)
     
     
     def __str__(self):
@@ -48,6 +49,7 @@ class Cases(models.Model):
     image = models.ImageField(upload_to='proudcts/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    rating = models.DecimalField(max_digits=3, decimal_places=1 ,null=True, blank=True)
     
     
     def __str__(self):
