@@ -7,27 +7,28 @@
 //     any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); }
 // };
 
-// let device = document.querySelector('.menu');
-// if (device) {
-//     if (isMobile.any()) {
-//         device.classList.add('touch');
-//         let arrow = document.querySelectorAll(`.arrow`);
+const menuList = document.querySelector('.menu__list');
 
-//         for (i = 0; i < arrow.length; i++) {
-//             let thisLink = arrow[i].previousElementSibling;
-//             let subMenu = arrow[i].nextElementSibling;
-//             let thisArrow = arrow[i];
+document.addEventListener("click", menuOpen);
 
-//             thisLink.classList.add('parent');
-//             arrow[i].addEventListener('click', function () {
-//                 subMenu.classList.toggle('open');
-//                 thisArrow.classList.toggle('active');
-//             })
-//         }
-//     } else {
-//         device.classList.add('mouse');
-//     }
-// }
+function menuOpen(event) {
+    if (event.target.closest('.menu__button')) {
+        menuList.classList.toggle('menu__list_active');
+    }
+}
 
+function menuClose(event) {
+    if (!event.target.closest('.menu')) {
+        menuList.classList.remove('menu__list_active');
+    }
+}
 
+function menuCloseEsc(event) {
+    if (event.code === 'Escape') {
+        menuList.classList.remove('menu__list_active');
+    }
+}
 
+document.addEventListener('click', menuOpen);
+document.addEventListener('click', menuClose);
+document.addEventListener('keyup', menuCloseEsc);
