@@ -37,8 +37,8 @@
                         </nav>
                     </div>
                     <div class="header-container__right-content">
-                        <a href=""><img src="{% static 'core/images/like-icon.svg' %}" alt=""></a>
-                        <a href=""><img src="{% static 'core/images/basket-icon.svg' %}" alt=""></a>
+                        <a href="{% url 'selected' %}"><img src="{% static 'core/images/like-icon.svg' %}" alt=""></a>
+                        <a href="{% url 'cart' %}"><img src="{% static 'core/images/basket-icon.svg' %}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -57,16 +57,16 @@
                             </div>
 
                             <ul class="footer-content__menu">
-                                <li><a class="footer-content__menu-item" href="#">Избранное</a></li>
-                                <li><a class="footer-content__menu-item" href="#">Корзина</a></li>
-                                <li><a class="footer-content__menu-item" href="#">Контакты</a></li>
+                                <li><a class="footer-content__menu-item" href="{% url 'selected' %}">Избранное</a></li>
+                                <li><a class="footer-content__menu-item" href="{% url 'cart' %}">Корзина</a></li>
+                                <li><a class="footer-content__menu-item" href="{% url 'contact' %}">Контакты</a></li>
                             </ul>
 
                         </div>
                         <div class="footer-content__right-content">
                             <div class="footer-content__info">
                                 <div class="footer-content__conditions">
-                                    <a href="#">Условия сервиса</a>
+                                    <a href="{% url 'about' %}">Условия сервиса</a>
                                 </div>
                                 <div class="footer-content__lang">
                                     <img src="{% static 'core/images/lang.svg' %}" alt="">
@@ -78,19 +78,19 @@
                                 </div>
                             </div>
                             <div class="footer-content__social-icons">
-                                <a href="#">
+                                <a href="https://www.instagram.com/" target="_blank">
                                     <svg class="social-link" width="30px" height="30px">
                                         <use href="{% static 'core/images/icons.svg' %}#icon-instagram">
                                         </use>
                                     </svg>
                                 </a>
-                                <a href="#">
+                                <a href="https://web.telegram.org/" target="_blank">
                                     <svg class="social-link" width="30px" height="30px">
                                         <use href="{% static 'core/images/icons.svg' %}#icon-telegram">
                                         </use>
                                     </svg>
                                 </a>
-                                <a href="#">
+                                <a href="https://web.whatsapp.com/" target="_blank">
                                     <svg class="social-link" width="30px" height="30px">
                                         <use href="{% static 'core/images/icons.svg' %}#icon-whatsapp">
                                         </use>

@@ -99,12 +99,12 @@
                                                 </svg>
                                             </button>
                                         </div>
-                                        <a href="#">
+                                        <a href="{% url 'product' %}">
                                             <img src="{{item.image.url}}" alt="#" width="219px" height="237px">
                                         </a>
                                     </div>
                                     <div class="headphones-block__card-text">
-                                        <a class="headphones-block__card-title" href="#">
+                                        <a class="headphones-block__card-title" href="{% url 'product' %}">
                                             <h4>{{item.name}}</h4>
                                         </a>
                                         <p class="headphones-block__card-price">{{item.price}} $</p>
@@ -144,13 +144,13 @@
                                                 </svg>
                                             </button>
                                         </div>
-                                        <a href="#">
+                                        <a href="{% url 'product' %}">
                                             <img src="{{item.image.url}}" alt="#" width="219px" height="237px">
                                         </a>
                                     </div>
 
                                     <div class="headphones-block__card-text">
-                                        <a class="headphones-block__card-title" href="#">
+                                        <a class="headphones-block__card-title" href="{% url 'product' %}">
                                             <h4>{{item.name}}</h4>
                                         </a>
                                         <p class="headphones-block__card-price">{{item.price}} $</p>
