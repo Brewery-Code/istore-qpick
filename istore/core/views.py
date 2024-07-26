@@ -13,7 +13,7 @@ def index(request):
     return render(request, 'core/index.html', context=data)
 
 
-def show_product(request):
+def show_product(request, product_id):
     return render(request, 'core/product.html')
 
 
