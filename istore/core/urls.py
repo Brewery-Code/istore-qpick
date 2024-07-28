@@ -8,5 +8,5 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'), #127.0.0.1:8000/contact
     path('cart/', views.cart, name='cart'), #127.0.0.1:8000/
     path('selected/', views.selected, name='selected'), #127.0.0.1:8000/selected
-    path('product/<int:product_id>', views.show_product, name='product')
+    path('product/<slug:product_slug>', views.show_product, name='product')
 ]
