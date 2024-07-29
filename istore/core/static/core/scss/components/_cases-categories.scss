@@ -41,6 +41,8 @@
 
 @media (max-width: 1200px) {
     .cases-container {
+        margin: 0 10px;
+
         &__list {
             gap: 16px;
             flex-wrap: nowrap;
