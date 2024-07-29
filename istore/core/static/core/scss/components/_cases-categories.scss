@@ -11,10 +11,8 @@
         display: flex;
         gap: 30px;
         flex-wrap: wrap;
-        /* В кілька рядків для ширини > 1200px */
         margin-top: 20px;
         overflow: hidden;
-        /* Приховати прокрутку для ширини > 1200px */
     }
 
     &__card {
@@ -50,6 +48,8 @@
             scroll-snap-type: x mandatory;
             scroll-padding: 0 20px;
             scroll-behavior: smooth;
+            scrollbar-width: none;
+
         }
 
         &__item {

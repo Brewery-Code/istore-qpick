@@ -439,6 +439,7 @@ main {
     scroll-snap-type: x mandatory;
     scroll-padding: 0 20px;
     scroll-behavior: smooth;
+    scrollbar-width: none;
   }
   .cases-container__item {
     flex: 0 0 auto;
