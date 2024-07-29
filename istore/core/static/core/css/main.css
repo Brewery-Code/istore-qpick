@@ -404,10 +404,8 @@ main {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
-  /* В кілька рядків для ширини > 1200px */
   margin-top: 20px;
   overflow: hidden;
-  /* Приховати прокрутку для ширини > 1200px */
 }
 .cases-container__card {
   width: 350px;
