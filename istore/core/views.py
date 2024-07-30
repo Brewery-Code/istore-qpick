@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from core.models import Headphones, Cases
 
 
@@ -10,3 +11,23 @@ def index(request):
         'cases': cases
     }
     return render(request, 'core/index.html', context=data)
+
+
+def show_product(request, product_slug):
+    return render(request, 'core/product.html')
+
+
+def about(request):
+    return HttpResponse("About page")
+
+
+def contact(request):
+    return HttpResponse("Contact page")
+
+
+def cart(request):
+    return HttpResponse("Cart page")
+
+
+def selected(request):
+    return HttpResponse("Selected page")

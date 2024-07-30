@@ -33,6 +33,7 @@ class Headphones(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     rating = models.DecimalField(max_digits=3, decimal_places=1 ,null=True, blank=True)
+    slug = models.SlugField(max_length=100, unique=True, blank=True, null=True)
     
     
     def __str__(self):
@@ -50,6 +51,7 @@ class Cases(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     rating = models.DecimalField(max_digits=3, decimal_places=1 ,null=True, blank=True)
+    slug = models.SlugField(max_length=100, unique=True, blank=True, null=True)
     
     
     def __str__(self):
