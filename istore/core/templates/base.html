@@ -17,29 +17,122 @@
                     <div class="header-container__left-content">
                         <img src="{% static 'core/images/Logo.svg' %}" alt="logo-img">
                         <nav class="menu">
-                            <button class="menu__button">Выбрать модель телефона</button>
+                            <button class="menu__button">
+                                <p>Выбрать модель телефона</p>
+                            </button>
                             <ul class="menu__list">
                                 <li class="menu__list-item">
                                     <details>
-                                        <summary>Apple</summary>
-                                        <a href="">Iphone 13 Pro</a>
-                                        <a href="">Iphone 13 Pro</a>
+                                        <summary class="header__summary">
+                                            <span class="menu__list-subtitle">Apple</span>
+                                        </summary>
+                                        <div class="menu__details-content">
+                                            <a href="">iPhone 12</a>
+                                            <a href="">iPhone 12 Mini</a>
+                                            <a href="">iPhone 12 Pro</a>
+                                            <a href="">iPhone 12 Pro Max</a>
+                                            <a href="">iPhone 13</a>
+                                            <a href="">iPhone 13 Mini</a>
+                                            <a href="">iPhone 13 Pro</a>
+                                            <a href="">iPhone 13 Pro Max</a>
+                                            <a href="">iPhone 14</a>
+                                            <a href="">iPhone 14 Plus</a>
+                                            <a href="">iPhone 14 Pro</a>
+                                            <a href="">iPhone 14 Pro Max</a>
+                                            <a href="">iPhone 15</a>
+                                            <a href="">iPhone 15 Plus</a>
+                                            <a href="">iPhone 15 Pro</a>
+                                            <a href="">iPhone 15 Pro Max</a>
+                                        </div>
                                     </details>
                                 </li>
                                 <li class="menu__list-item">
                                     <details>
-                                        <summary>Samsung</summary>
-                                        <a href="">Iphone 13 Pro</a>
-                                        <a href="">Iphone 13 Pro</a>
+                                        <summary class="header__summary">
+                                            <span class="menu__list-subtitle">Samsung</span>
+                                        </summary>
+                                        <div class="menu__details-content">
+                                            <a href="">Galaxy S23 Ultra</a>
+                                            <a href="">Galaxy S23+</a>
+                                            <a href="">Galaxy S23</a>
+                                            <a href="">Galaxy A54 5G</a>
+                                            <a href="">Galaxy A34 5G</a>
+                                            <a href="">Galaxy A14</a>
+                                            <a href="">Galaxy S22 Ultra</a>
+                                            <a href="">Galaxy S22+</a>
+                                            <a href="">Galaxy S22</a>
+                                            <a href="">Galaxy A53 5G</a>
+                                            <a href="">Galaxy A33 5G</a>
+                                            <a href="">Galaxy A13</a>
+                                        </div>
                                     </details>
+                                </li>
+                                <li class="menu__list-item">
+                                    <details>
+                                        <summary class="header__summary">
+                                            <span class="menu__list-subtitle">Xiaomi</span>
+                                        </summary>
+                                        <div class="menu__details-content">
+                                            <a href="">Xiaomi 14</a>
+                                            <a href="">Xiaomi 13</a>
+                                            <a href="">Xiaomi 12 Pro</a>
+                                            <a href="">Mi Note 10 Lite</a>
+                                            <a href="">Mi 10T</a>
+                                            <a href="">Xiaomi 11T Pro</a>
+                                            <a href="">Redmi Note 11 4G</a>
+                                            <a href="">Redmi Note 11 5G+</a>
+                                            <a href="">Redmi Note 11 Pro+</a>
+                                            <a href="">Redmi K40 Pro</a>
+                                            <a href="">Black Shark 4 Pro</a>
+                                            <a href="">Xiaomi 13 pro</a>
+                                        </div>
+                                    </details>
+                                </li>
+                                <li class="menu__list-aditional-item">
+                                    <img src="{% static 'core/images/like.svg' %}" alt="">Избраное
+                                </li>
+                                <li class="menu__list-aditional-item">
+                                    <img src="{% static 'core/images/service.svg' %}" alt="">Условия сервиса
+                                </li>
+                                <li class="menu__list-aditional-item">
+                                    <img src="{% static 'core/images/icon-phone.svg' %}" alt="">Контакты
+                                </li>
+                                <li class="menu__list-aditional-item">
+                                    <ul class="menu__list-lang-menu">
+                                        <img src="{% static 'core/images/globus.svg' %}" alt="">
+                                        <li><a class="menu__list-lang-item" href="#">Каз</a></li>
+                                        <li><a class="menu__list-lang-item" href="#">Ru</a></li>
+                                        <li><a class="menu__list-lang-item" href="#">Eng</a></li>
+                                    </ul>
                                 </li>
                             </ul>
                         </nav>
                     </div>
-                    <div class="header-container__right-content">
-                        <a href=""><img src="{% static 'core/images/like-icon.svg' %}" alt=""></a>
-                        <a href=""><img src="{% static 'core/images/basket-icon.svg' %}" alt=""></a>
+                    <div class="header-container__right-content right-content">
+                        <a href="" class="right-content__img"><img src="{% static 'core/images/like-icon.svg' %}"
+                                alt=""></a>
+                        <a href="" class="right-content__img"><img src="{% static 'core/images/basket-icon.svg' %}"
+                                alt=""></a>
+                        <button class="right-content__burger-btn">
+                            <span class="right-content__burger-item"></span>
+                            <span class="right-content__burger-item"></span>
+                            <span class="right-content__burger-item"></span>
+                        </button>
                     </div>
+                    <!-- <div class="header-container__right-content right-content">
+                        <a href="#">
+                            <svg class="right-content__item" width="22px" height="20px">
+                                <use href="{% static 'core/images/icons.svg' %}#icon-like">
+                                </use>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg class="right-content__item" width="23px" height="23px">
+                                <use href="{% static 'core/images/icons.svg' %}#icon-basket">
+                                </use>
+                            </svg>
+                        </a>
+                    </div> -->
                 </div>
             </div>
         </header>

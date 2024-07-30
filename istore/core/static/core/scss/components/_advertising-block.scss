@@ -4,7 +4,8 @@
     position: relative;
     min-height: 197px;
     border-radius: 30px;
-    margin: 22px 0 0 0;
+    margin: 0px 0 0 0;
+    overflow: hidden;
 
     &__title {
         font-weight: 600;
@@ -25,7 +26,7 @@
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 992px) {
     .advertising-container {
         padding: 0 25px;
     }
@@ -95,6 +96,26 @@
 
         img {
             margin: 0 0 0 -38%;
+        }
+    }
+}
+
+@media (max-width: 392px) {
+    .advertising-block {
+
+        &__title {
+            font-size: 18px;
+            max-width: 150px;
+        }
+    }
+}
+
+@media (max-width: 362px) {
+    .advertising-block {
+
+        &__title {
+            font-size: 18px;
+            max-width: 130px;
         }
     }
 }
