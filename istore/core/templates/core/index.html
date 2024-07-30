@@ -85,39 +85,47 @@
             </div>
             <div class="headphones-block ">
                 <ul class="headphones-block__list">
-                    {% for item in headphones %}
-                    <li>
-                        <article>
-                            <div class="headphones-block__item">
-                                <div class="headphones-block__card">
-                                    <div class="headphones-block__card-img">
-                                        <div class="headphones-block__card-like">
-                                            <button class="heart-button" type="button">
-                                                <svg class="heart-button__icon-like" width="20px" height="18px">
-                                                    <use href="{% static 'core/images/icons.svg' %}#icon-like">
-                                                    </use>
-                                                </svg>
-                                            </button>
+                    <div class="headphones-block__swiper">
+                        <div class="headphones-block__swiper-wrapper">
+
+                            {% for item in headphones %}
+                            <li class="headphones-block__swiper-slide">
+                                <article>
+                                    <div class="headphones-block__item">
+                                        <div class="headphones-block__card">
+                                            <div class="headphones-block__card-img">
+                                                <div class="headphones-block__card-like">
+                                                    <button class="heart-button" type="button">
+                                                        <svg class="heart-button__icon-like" width="20px" height="18px">
+                                                            <use href="{% static 'core/images/icons.svg' %}#icon-like">
+                                                            </use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <a href="{% url 'product' item.slug %}">
+                                                    <img src="{{item.image.url}}" alt="#" width="219px" height="237px">
+                                                </a>
+                                            </div>
+                                            <div class="headphones-block__card-text">
+                                                <a class="headphones-block__card-title"
+                                                    href="{% url 'product' item.slug %}">
+                                                    <h4>{{item.name}}</h4>
+                                                </a>
+                                                <p class="headphones-block__card-price">{{item.price}} $</p>
+                                                <div class="headphones-block__star-rating">
+                                                    <span class="headphones-block__card-star">&#9733;</span>
+                                                    <span
+                                                        class="headphones-block__card-rating-value">{{item.rating}}</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <a href="{% url 'product' item.slug %}">
-                                            <img src="{{item.image.url}}" alt="#" width="219px" height="237px">
-                                        </a>
                                     </div>
-                                    <div class="headphones-block__card-text">
-                                        <a class="headphones-block__card-title" href="{% url 'product' item.slug %}">
-                                            <h4>{{item.name}}</h4>
-                                        </a>
-                                        <p class="headphones-block__card-price">{{item.price}} $</p>
-                                        <div class="headphones-block__star-rating">
-                                            <span class="headphones-block__card-star">&#9733;</span>
-                                            <span class="headphones-block__card-rating-value">{{item.rating}}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </li>
-                    {% endfor %}
+                                </article>
+                            </li>
+                            {% endfor %}
+
+                        </div>
+                    </div>
                 </ul>
             </div>
         </div>

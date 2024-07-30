@@ -424,7 +424,6 @@ main {
   transition: color 0.3s;
 }
 .footer-container .footer-content__lang-item:hover {
-  font-weight: 700;
   color: #ffa542;
 }
 .footer-container .footer-content__social-icons {
@@ -564,28 +563,9 @@ main {
   line-height: 21px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
   .cases-container {
-    margin: 0 10px;
-  }
-  .cases-container__list {
-    gap: 16px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 0 20px;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-  }
-  .cases-container__item {
-    flex: 0 0 auto;
-    width: 80%;
-    scroll-snap-align: center;
-  }
-  .cases-container__card {
-    width: 300px;
-    height: 357px;
-    padding: 15px 75px 11px 75px;
+    padding: 0 25px;
   }
 }
 .headphones-container__text {
@@ -593,12 +573,6 @@ main {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px;
-}
-.headphones-container .headphones-block__list {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  overflow: hidden;
 }
 .headphones-container .headphones-block__item {
   flex: 0 0 auto;
@@ -659,51 +633,14 @@ main {
   color: #333;
 }
 
-@media (max-width: 1200px) {
-  .container {
-    padding: 0 24px 0 24px;
+@media (min-width: 992px) {
+  .headphones-container {
+    padding: 0 25px;
   }
-  .headphones-container .headphones-block__list {
+  .headphones-container .headphones-block__swiper-wrapper {
     display: flex;
-    gap: 16px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 0 10px;
-    scroll-behavior: smooth;
-  }
-  .headphones-container .headphones-block__item {
-    flex: 0 0 auto;
-    width: 90%;
-    scroll-snap-align: center;
-  }
-  .headphones-container .headphones-block__card {
-    max-width: 379px;
-    height: 410px;
-  }
-}
-@media (max-width: 992px) {
-  .container {
-    padding: 0 24px;
-  }
-  .headphones-block {
-    margin: 0 10px;
-  }
-}
-@media (max-width: 768px) {
-  .container {
-    padding: 0 24px;
-  }
-  .headphones-block {
-    margin: 0 10px;
-  }
-}
-@media (max-width: 576px) {
-  .container {
-    padding: 0 24px;
-  }
-  .headphones-block {
-    margin: 0 10px;
+    gap: 30px;
+    flex-wrap: wrap;
   }
 }
 .heart-button {

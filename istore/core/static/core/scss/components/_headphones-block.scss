@@ -7,12 +7,6 @@
     }
 
     .headphones-block {
-        &__list {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-            overflow: hidden;
-        }
 
         &__item {
             flex: 0 0 auto;
@@ -84,65 +78,80 @@
     }
 }
 
-@media (max-width: 1200px) {
-    .container {
-        padding: 0 24px 0 24px;
-    }
-
+@media (min-width: 992px) {
     .headphones-container {
+        padding: 0 25px;
+
         .headphones-block {
-            &__list {
+            &__swiper-wrapper {
                 display: flex;
-                gap: 16px;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                scroll-padding: 0 10px;
-                scroll-behavior: smooth;
-            }
+                gap: 30px;
+                flex-wrap: wrap;
 
-            &__item {
-                flex: 0 0 auto;
-                width: 90%;
-                scroll-snap-align: center;
-            }
-
-            &__card {
-                max-width: 379px;
-                height: 410px;
             }
         }
     }
 }
 
-@media (max-width: 992px) {
-    .container {
-        padding: 0 24px;
-    }
+// @media (max-width: 1200px) {
+//     .container {
+//         padding: 0 24px 0 24px;
+//     }
 
-    .headphones-block {
-        margin: 0 10px;
-    }
+//     .headphones-container {
+//         .headphones-block {
+//             &__list {
+//                 display: flex;
+//                 gap: 16px;
+//                 flex-wrap: nowrap;
+//                 overflow-x: auto;
+//                 scroll-snap-type: x mandatory;
+//                 scroll-padding: 0 10px;
+//                 scroll-behavior: smooth;
+//             }
+
+//             &__item {
+//                 flex: 0 0 auto;
+//                 width: 90%;
+//                 scroll-snap-align: center;
+//             }
+
+//             &__card {
+//                 max-width: 379px;
+//                 height: 410px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 992px) {
+//     .container {
+//         padding: 0 24px;
+//     }
+
+//     .headphones-block {
+//         margin: 0 10px;
+//     }
 
 
-}
+// }
 
-@media (max-width:768px) {
-    .container {
-        padding: 0 24px;
-    }
+// @media (max-width:768px) {
+//     .container {
+//         padding: 0 24px;
+//     }
 
-    .headphones-block {
-        margin: 0 10px;
-    }
-}
+//     .headphones-block {
+//         margin: 0 10px;
+//     }
+// }
 
-@media (max-width:576px) {
-    .container {
-        padding: 0 24px;
-    }
+// @media (max-width:576px) {
+//     .container {
+//         padding: 0 24px;
+//     }
 
-    .headphones-block {
-        margin: 0 10px;
-    }
-}
+//     .headphones-block {
+//         margin: 0 10px;
+//     }
+// }
