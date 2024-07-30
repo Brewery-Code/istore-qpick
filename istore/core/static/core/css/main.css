@@ -468,8 +468,8 @@ main {
 }
 .headphones-container .headphones-block__card {
   position: relative;
-  max-width: 379px;
-  height: 410px;
+  max-width: 350px;
+  height: 407px;
   background-color: #ffffff;
   border-radius: 30px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
@@ -523,7 +523,7 @@ main {
 
 @media (max-width: 1200px) {
   .container {
-    max-width: 900px;
+    padding: 0 24px 0 24px;
   }
   .headphones-container .headphones-block__list {
     display: flex;
@@ -546,7 +546,7 @@ main {
 }
 @media (max-width: 992px) {
   .container {
-    max-width: 730px;
+    padding: 0 24px;
   }
   .headphones-block {
     margin: 0 10px;
@@ -554,7 +554,7 @@ main {
 }
 @media (max-width: 768px) {
   .container {
-    max-width: 550px;
+    padding: 0 24px;
   }
   .headphones-block {
     margin: 0 10px;
@@ -562,7 +562,7 @@ main {
 }
 @media (max-width: 576px) {
   .container {
-    max-width: none;
+    padding: 0 24px;
   }
   .headphones-block {
     margin: 0 10px;
