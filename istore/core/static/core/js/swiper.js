@@ -15,11 +15,19 @@ var swiper = new Swiper(".swiper", {
     320: {
       slidesPerView: 1.24,
       spaceBetween: 5,
+      
     },
     
     768: {
       slidesPerView: 2.5,
       spaceBetween: 5,
+      coverflowEffect: {
+      rotate: 6,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+  },
     },
     
     992: {
