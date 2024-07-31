@@ -65,3 +65,15 @@
         }
     }
 }
+
+@media (min-width: 992px) {
+    .cases-container {
+        .cases-block {
+            &__swiper-wrapper {
+                display: flex;
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

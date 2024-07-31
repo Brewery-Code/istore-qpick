@@ -587,6 +587,13 @@ main {
     padding: 15px 75px 11px 75px;
   }
 }
+@media (min-width: 992px) {
+  .cases-container .cases-block__swiper-wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+}
 .headphones-container__text {
   color: #838383;
   font-size: 20px;

@@ -26,20 +26,36 @@ const isMobile = {
 };
 
 if (isMobile.any()) {
-    const element1 = document.querySelectorAll('.headphones-block__swiper');
-    element1.forEach(element => {
+    const headphonesElements = document.querySelectorAll('.headphones-block__swiper');
+    headphonesElements.forEach(element => {
         element.classList.add('swiper');
     });
 
-    const element2 = document.querySelectorAll('.headphones-block__swiper-wrapper');
-    element2.forEach(element => {
+    const casesElements = document.querySelectorAll('.cases-block__swiper');
+    casesElements.forEach(element => {
+        element.classList.add('swiper');
+    });
+
+    const headphonesWrapperElements = document.querySelectorAll('.headphones-block__swiper-wrapper');
+    headphonesWrapperElements.forEach(element => {
         element.classList.add('swiper-wrapper');
     });
 
-    const element3 = document.querySelectorAll('.headphones-block__swiper-slide');
-    element3.forEach(element => {
+    const casesWrapperElements = document.querySelectorAll('.cases-block__swiper-wrapper');
+    casesWrapperElements.forEach(element => {
+        element.classList.add('swiper-wrapper');
+    });
+
+    const headphonesSlideElements = document.querySelectorAll('.headphones-block__swiper-slide');
+    headphonesSlideElements.forEach(element => {
+        element.classList.add('swiper-slide');
+    });
+
+    const casesSlideElements = document.querySelectorAll('.cases-block__swiper-slide');
+    casesSlideElements.forEach(element => {
         element.classList.add('swiper-slide');
     });
 }
+
 
 
