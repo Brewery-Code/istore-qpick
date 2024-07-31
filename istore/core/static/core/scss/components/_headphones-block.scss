@@ -8,10 +8,10 @@
 
     .headphones-block {
 
-        &__item {
-            flex: 0 0 auto;
-            width: 350px;
-        }
+        // &__item {
+        //     flex: 0 0 auto;
+        //     width: 350px;
+        // }
 
         &__card {
             position: relative;
@@ -31,7 +31,6 @@
         &__card-img {
             display: flex;
             justify-content: center;
-            padding-bottom: 54px;
             padding: 15px 65px 54px 65px;
         }
 
@@ -78,10 +77,47 @@
     }
 }
 
+@media (max-width: 1120px) {
+    .container {
+        max-width: 992px;
+    }
+
+    .headphones-container {
+        padding: 0 15px;
+
+
+        .headphones-block {
+            &__card {
+                max-width: 300px;
+                height: 357px;
+            }
+
+            &__card-img {
+                padding: 10px 45px 44px 45px;
+            }
+
+            &__card-text {
+                gap: 10px;
+                font-size: 14px;
+                padding: 0 11px;
+            }
+
+            &__star-rating {
+                bottom: 11px;
+                left: 17px;
+            }
+
+            &__card-rating-value {
+                font-size: 14px;
+
+            }
+        }
+    }
+}
+
+
 @media (min-width: 992px) {
     .headphones-container {
-        padding: 0 25px;
-
         .headphones-block {
             &__swiper-wrapper {
                 display: flex;
@@ -89,69 +125,11 @@
                 flex-wrap: wrap;
 
             }
+
+            &__swiper-slide {
+                border-radius: 30px;
+                // box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+            }
         }
     }
 }
-
-// @media (max-width: 1200px) {
-//     .container {
-//         padding: 0 24px 0 24px;
-//     }
-
-//     .headphones-container {
-//         .headphones-block {
-//             &__list {
-//                 display: flex;
-//                 gap: 16px;
-//                 flex-wrap: nowrap;
-//                 overflow-x: auto;
-//                 scroll-snap-type: x mandatory;
-//                 scroll-padding: 0 10px;
-//                 scroll-behavior: smooth;
-//             }
-
-//             &__item {
-//                 flex: 0 0 auto;
-//                 width: 90%;
-//                 scroll-snap-align: center;
-//             }
-
-//             &__card {
-//                 max-width: 379px;
-//                 height: 410px;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 992px) {
-//     .container {
-//         padding: 0 24px;
-//     }
-
-//     .headphones-block {
-//         margin: 0 10px;
-//     }
-
-
-// }
-
-// @media (max-width:768px) {
-//     .container {
-//         padding: 0 24px;
-//     }
-
-//     .headphones-block {
-//         margin: 0 10px;
-//     }
-// }
-
-// @media (max-width:576px) {
-//     .container {
-//         padding: 0 24px;
-//     }
-
-//     .headphones-block {
-//         margin: 0 10px;
-//     }
-// }

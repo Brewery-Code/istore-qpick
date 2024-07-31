@@ -563,9 +563,28 @@ main {
   line-height: 21px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1120px) {
   .cases-container {
-    padding: 0 25px;
+    padding: 0 15px;
+  }
+  .cases-container__list {
+    gap: 28px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 20px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .cases-container__item {
+    flex: 0 0 auto;
+    width: 80%;
+    scroll-snap-align: center;
+  }
+  .cases-container__card {
+    width: 300px;
+    height: 357px;
+    padding: 15px 75px 11px 75px;
   }
 }
 .headphones-container__text {
@@ -573,10 +592,6 @@ main {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px;
-}
-.headphones-container .headphones-block__item {
-  flex: 0 0 auto;
-  width: 350px;
 }
 .headphones-container .headphones-block__card {
   position: relative;
@@ -594,7 +609,6 @@ main {
 .headphones-container .headphones-block__card-img {
   display: flex;
   justify-content: center;
-  padding-bottom: 54px;
   padding: 15px 65px 54px 65px;
 }
 .headphones-container .headphones-block__card-text {
@@ -633,14 +647,41 @@ main {
   color: #333;
 }
 
-@media (min-width: 992px) {
-  .headphones-container {
-    padding: 0 25px;
+@media (max-width: 1120px) {
+  .container {
+    max-width: 992px;
   }
+  .headphones-container {
+    padding: 0 15px;
+  }
+  .headphones-container .headphones-block__card {
+    max-width: 300px;
+    height: 357px;
+  }
+  .headphones-container .headphones-block__card-img {
+    padding: 10px 45px 44px 45px;
+  }
+  .headphones-container .headphones-block__card-text {
+    gap: 10px;
+    font-size: 14px;
+    padding: 0 11px;
+  }
+  .headphones-container .headphones-block__star-rating {
+    bottom: 11px;
+    left: 17px;
+  }
+  .headphones-container .headphones-block__card-rating-value {
+    font-size: 14px;
+  }
+}
+@media (min-width: 992px) {
   .headphones-container .headphones-block__swiper-wrapper {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
+  }
+  .headphones-container .headphones-block__swiper-slide {
+    border-radius: 30px;
   }
 }
 .heart-button {
