@@ -21,59 +21,65 @@
             <div class="cases-container__text">
                 <p>Чехлы</p>
             </div>
-            <ul class="cases-container__list">
-                <li>
-                    <article>
-                        <div class="cases-container__item">
-                            <a href="#">
-                                <div class="cases-container__card">
-                                    <div class="cases-container__img">
-                                        <img src="{% static 'core/images/mellow-white.jpeg' %}" alt="#" width="151px"
-                                            height="292px">
+            <div class="cases-block">
+                <ul class="cases-container__list">
+                    <div class="cases-block__swiper">
+                        <div class="cases-block__swiper-wrapper">
+                            <li class="cases-block__swiper-slide">
+                                <article>
+                                    <div class="cases-container__item">
+                                        <a href="#">
+                                            <div class="cases-container__card">
+                                                <div class="cases-container__img">
+                                                    <img src="{% static 'core/images/mellow-white.jpeg' %}" alt="#"
+                                                        width="151px" height="292px">
+                                                </div>
+                                                <div class="cases-container__card-title">
+                                                    <h4>Стеклянные</h4>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="cases-container__card-title">
-                                        <h4>Стеклянные</h4>
+                                </article>
+                            </li>
+                            <li class="cases-block__swiper-slide">
+                                <article>
+                                    <div class="cases-container__item">
+                                        <a href="#">
+                                            <div class="cases-container__card">
+                                                <div class="cases-container__img">
+                                                    <img src="{% static 'core/images/mellow-yellow.jpeg' %}" alt="#"
+                                                        width="151px" height="292px">
+                                                </div>
+                                                <div class="cases-container__card-title">
+                                                    <h4>Силиконовые</h4>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-                                </div>
-                            </a>
+                                </article>
+                            </li>
+                            <li class="cases-block__swiper-slide">
+                                <article>
+                                    <div class="cases-container__item">
+                                        <a href="#">
+                                            <div class="cases-container__card">
+                                                <div class="cases-container__img">
+                                                    <img src="{% static 'core/images/mellow-black.jpeg' %}" alt="#"
+                                                        width="151px" height="292px">
+                                                </div>
+                                                <div class="cases-container__card-title">
+                                                    <h4>Кожаные</h4>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </article>
+                            </li>
                         </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="cases-container__item">
-                            <a href="#">
-                                <div class="cases-container__card">
-                                    <div class="cases-container__img">
-                                        <img src="{% static 'core/images/mellow-yellow.jpeg' %}" alt="#" width="151px"
-                                            height="292px">
-                                    </div>
-                                    <div class="cases-container__card-title">
-                                        <h4>Силиконовые</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="cases-container__item">
-                            <a href="#">
-                                <div class="cases-container__card">
-                                    <div class="cases-container__img">
-                                        <img src="{% static 'core/images/mellow-black.jpeg' %}" alt="#" width="151px"
-                                            height="292px">
-                                    </div>
-                                    <div class="cases-container__card-title">
-                                        <h4>Кожаные</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </article>
-                </li>
-            </ul>
+                    </div>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
@@ -85,39 +91,47 @@
             </div>
             <div class="headphones-block ">
                 <ul class="headphones-block__list">
-                    {% for item in headphones %}
-                    <li>
-                        <article>
-                            <div class="headphones-block__item">
-                                <div class="headphones-block__card">
-                                    <div class="headphones-block__card-img">
-                                        <div class="headphones-block__card-like">
-                                            <button class="heart-button" type="button">
-                                                <svg class="heart-button__icon-like" width="20px" height="18px">
-                                                    <use href="{% static 'core/images/icons.svg' %}#icon-like">
-                                                    </use>
-                                                </svg>
-                                            </button>
+                    <div class="headphones-block__swiper">
+                        <div class="headphones-block__swiper-wrapper">
+
+                            {% for item in headphones %}
+                            <li class="headphones-block__swiper-slide">
+                                <article>
+                                    <div class="headphones-block__item">
+                                        <div class="headphones-block__card">
+                                            <div class="headphones-block__card-img">
+                                                <div class="headphones-block__card-like">
+                                                    <button class="heart-button" type="button">
+                                                        <svg class="heart-button__icon-like" width="20px" height="18px">
+                                                            <use href="{% static 'core/images/icons.svg' %}#icon-like">
+                                                            </use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <a href="{% url 'product' item.slug %}">
+                                                    <img src="{{item.image.url}}" alt="#" width="219px" height="237px">
+                                                </a>
+                                            </div>
+                                            <div class="headphones-block__card-text">
+                                                <a class="headphones-block__card-title"
+                                                    href="{% url 'product' item.slug %}">
+                                                    <h4>{{item.name}}</h4>
+                                                </a>
+                                                <p class="headphones-block__card-price">{{item.price}} $</p>
+                                                <div class="headphones-block__star-rating">
+                                                    <span class="headphones-block__card-star">&#9733;</span>
+                                                    <span
+                                                        class="headphones-block__card-rating-value">{{item.rating}}</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <a href="{% url 'product' item.slug %}">
-                                            <img src="{{item.image.url}}" alt="#" width="219px" height="237px">
-                                        </a>
                                     </div>
-                                    <div class="headphones-block__card-text">
-                                        <a class="headphones-block__card-title" href="{% url 'product' item.slug %}">
-                                            <h4>{{item.name}}</h4>
-                                        </a>
-                                        <p class="headphones-block__card-price">{{item.price}} $</p>
-                                        <div class="headphones-block__star-rating">
-                                            <span class="headphones-block__card-star">&#9733;</span>
-                                            <span class="headphones-block__card-rating-value">{{item.rating}}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </li>
-                    {% endfor %}
+                                </article>
+                            </li>
+                            {% endfor %}
+
+                        </div>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -129,41 +143,49 @@
             <div class="headphones-container__text">
                 <p>Беспроводные наушники</p>
             </div>
-            <div class="headphones-block">
+            <div class="headphones-block ">
                 <ul class="headphones-block__list">
-                    {% for item in headphones %}
-                    <li>
-                        <article>
-                            <div class="headphones-block__item">
-                                <div class="headphones-block__card">
-                                    <div class="headphones-block__card-img">
-                                        <div class="headphones-block__card-like">
-                                            <button class="heart-button" type="button">
-                                                <svg class="heart-button__icon-like" width="20px" height="18px">
-                                                    <use href="{% static 'core/images/icons.svg' %}#icon-like"></use>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <a href="{% url 'product' item.slug %}">
-                                            <img src="{{item.image.url}}" alt="#" width="219px" height="237px">
-                                        </a>
-                                    </div>
+                    <div class="headphones-block__swiper">
+                        <div class="headphones-block__swiper-wrapper">
 
-                                    <div class="headphones-block__card-text">
-                                        <a class="headphones-block__card-title" href="{% url 'product' item.slug %}">
-                                            <h4>{{item.name}}</h4>
-                                        </a>
-                                        <p class="headphones-block__card-price">{{item.price}} $</p>
-                                        <div class="headphones-block__star-rating">
-                                            <span class="headphones-block__card-star">&#9733;</span>
-                                            <span class="headphones-block__card-rating-value">{{item.rating}}</span>
+                            {% for item in headphones %}
+                            <li class="headphones-block__swiper-slide">
+                                <article>
+                                    <div class="headphones-block__item">
+                                        <div class="headphones-block__card">
+                                            <div class="headphones-block__card-img">
+                                                <div class="headphones-block__card-like">
+                                                    <button class="heart-button" type="button">
+                                                        <svg class="heart-button__icon-like" width="20px" height="18px">
+                                                            <use href="{% static 'core/images/icons.svg' %}#icon-like">
+                                                            </use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <a href="{% url 'product' item.slug %}">
+                                                    <img src="{{item.image.url}}" alt="#" width="219px" height="237px">
+                                                </a>
+                                            </div>
+                                            <div class="headphones-block__card-text">
+                                                <a class="headphones-block__card-title"
+                                                    href="{% url 'product' item.slug %}">
+                                                    <h4>{{item.name}}</h4>
+                                                </a>
+                                                <p class="headphones-block__card-price">{{item.price}} $</p>
+                                                <div class="headphones-block__star-rating">
+                                                    <span class="headphones-block__card-star">&#9733;</span>
+                                                    <span
+                                                        class="headphones-block__card-rating-value">{{item.rating}}</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </article>
-                    </li>
-                    {% endfor %}
+                                </article>
+                            </li>
+                            {% endfor %}
+
+                        </div>
+                    </div>
                 </ul>
             </div>
         </div>

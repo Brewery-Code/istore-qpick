@@ -21,7 +21,7 @@ def show_product(request, product_slug):
 
 
 def about(request):
-    return HttpResponse("About page")
+    return render(request, 'core/about.html')
 
 
 def contact(request):
