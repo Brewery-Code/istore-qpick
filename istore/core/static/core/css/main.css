@@ -189,7 +189,7 @@ main {
 
 @media (max-width: 992px) {
   .header-container {
-    padding: 20px 0px 0 0;
+    padding: 20px 24px 0 24px;
   }
 }
 .menu {
@@ -825,6 +825,7 @@ main {
 @media (max-width: 992px) {
   .product {
     margin: 20px 0 0 0;
+    padding: 0 24px;
   }
   .product__title {
     font-size: 17px;
