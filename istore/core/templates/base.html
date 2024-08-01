@@ -16,7 +16,9 @@
             <div class="container">
                 <div class="header-container">
                     <div class="header-container__left-content">
-                        <img src="{% static 'core/images/Logo.svg' %}" alt="logo-img">
+                        <a href="{% url 'home' %}">
+                            <img src="{% static 'core/images/Logo.svg' %}" alt="">
+                        </a>
                         <nav class="menu">
                             <button class="menu__button">
                                 <p>Выбрать модель телефона</p>
@@ -110,8 +112,8 @@
                         </nav>
                     </div>
                     <div class="header-container__right-content right-content">
-                        <a href="" class="right-content__img"><img src="{% static 'core/images/like-icon.svg' %}"
-                                alt=""></a>
+                        <a href="" class="right-content__img"><img src="{% static 'core/images/like.svg' %}" alt=""
+                                width="22px" height="20px"></a>
                         <a href="" class="right-content__img"><img src="{% static 'core/images/basket-icon.svg' %}"
                                 alt=""></a>
                         <button class="right-content__burger-btn">
@@ -147,7 +149,9 @@
                     <div class="footer-content">
                         <div class="footer-content__left-content">
                             <div class="footer-content__logo">
-                                <img src="{% static 'core/images/Logo.svg' %}" alt="">
+                                <a href="{% url 'home' %}">
+                                    <img src="{% static 'core/images/Logo.svg' %}" alt="">
+                                </a>
                             </div>
 
                             <ul class="footer-content__menu">
