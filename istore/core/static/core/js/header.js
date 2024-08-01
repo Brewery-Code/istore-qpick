@@ -1,7 +1,7 @@
 // Open dropdown menu on desktop version of website and help with animation of arrows.
 
 const menuList = document.querySelector('.menu__list');
-const menuButton = document.querySelector('.menu__button')
+const menuButton = document.querySelector('.menu__button');
 
 document.addEventListener("click", menuOpen);
 
@@ -77,7 +77,7 @@ class Accordion {
     constructor(el) {
         this.el = el;
         this.summary = el.querySelector('summary');
-        this.content = el.querySelector('.menu__details-content');
+        this.content = el.querySelector('.details-content');
 
         this.animation = null;
         this.isClosing = false;

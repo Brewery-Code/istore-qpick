@@ -1,6 +1,88 @@
-{% extends 'base.html' %} {% load static %}
+{% extends 'base.html' %}
 {% block main %}
+{% load static %}
 <div class="container">
-    <h1>Product page</h1>
+    <div class="product">
+        <div class="product__title">{{product.category}}</div>
+        <div class="product__body">
+            <div class="product__like">
+                <a href=""><img style="height: 22px; width: 22px;" src="{% static 'core/images/like.svg' %}" alt=""></a>
+            </div>
+            <p class="product__img">
+                <img src="{{product.image.url}}" alt="">
+            </p>
+            <div class="product__row">
+                <div class="product__name">{{product.name}}</div>
+                <div class="product__price">{{product.price}} $</div>
+            </div>
+        </div>
+        <div class="product__specifications">
+            <div class="description">
+                <details>
+                    <div class="description__title_desktop">Описание и характеристики</div>
+                    <summary>
+                        <div class="description__title">Описание и характеристики</div>
+                        <img class="description__title-arrow" style="height: 18px; width: 18px;"
+                            src="{% static 'core/images/header-arrow.svg' %}" alt="">
+                    </summary>
+                    <div class="details-content">
+                        <ul class="description__characteristics">
+                            <li class="description__item">Назва товару: {{product.name}}</li>
+                            <li class="description__item">Вага: {{product.weight}}</li>
+                            <li class="description__item">Матеріал товару: {{product.material}}</li>
+                            <li class="description__item">Захист від води та
+                                пилу:{{product.protection_against_moisture}}
+                            </li>
+                            <li class="description__item">Довжина кабелю: {{product.cable_length}}</li>
+                            <li class="description__item">Комплектація: {{product.complete_set}}</li>
+                            <li class="description__item">Мікрофон: {{product.microphone}}</li>
+                            <li class="description__item">Кольор: {{product.color}}</li>
+                            <li class="description__item">Конектор: {{product.connector}}</li>
+                            <li class="description__item">Керування звуком: {{product.volume_control}}</li>
+                            <li class="description__item">Тип кріплення: {{product.fastening_type}}</li>
+                            <li class="description__item">{{product.headphone_type}}</li>
+                            <li class="description__item">Тип підключення: {{product.connection_type}}</li>
+                            <li class="description__item">Частота: {{product.frequency_range}}</li>
+                            <li class="description__item">Чутливість: {{product.sensitivity}}</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+            <div class="description description-rating">
+                <details>
+                    <summary>
+                        <div class="description__title">Отзывы</div>
+                        <div class="description__rating">
+                            <p>
+                                <img src="{% static  'core/images/star.svg' %}" alt="">
+                                {{product.rating}}
+                            </p>
+                            <img class="description__title-arrow" style="height: 18px; width: 18px;"
+                                src="{% static 'core/images/header-arrow.svg' %}">
+                        </div>
+                    </summary>
+                    <div class="details-content">
+
+                    </div>
+                </details>
+            </div>
+            <div class="product-button">
+                <button class="product-button__item">Купить!</button>
+                <button class="product-button__item basket-batton">
+                    <img src="{% static  'core/images/basket-icon.svg' %}" alt="">Добавить в корзину</button>
+                <button class="product-button__item_mobile basket-batton lil-btn">
+                    <img src="{% static  'core/images/basket-icon.svg' %}" alt="">
+                </button>
+                <button class="product-button__item_mobile big-btn">Купить сейчас!</button>
+                <button class="product-button__item_mobile whatsapp lil-btn">
+                    <svg class="social-link" width="31px" height="28px">
+                        <use href="{% static 'core/images/icons.svg' %}#icon-whatsapp">
+                        </use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
+<script src="{% static 'core/js/product.js' %}"></script>
 {% endblock %}

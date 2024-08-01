@@ -12,9 +12,12 @@ def index(request):
     }
     return render(request, 'core/index.html', context=data)
 
-
 def show_product(request, product_slug):
-    return render(request, 'core/product.html')
+    product = Headphones.objects.get(slug=product_slug)
+    data = {
+        'product': product,
+    }
+    return render(request, 'core/product.html', context=data)
 
 
 def about(request):
