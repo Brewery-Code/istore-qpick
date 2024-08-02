@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<section>
+    <div class="container">
+        <div class="contact-container">
+            <div class="contact-container__content">
+                <div class="contact-container__map">
+                    <h2 class="contact-container__map-title">Наш офис</h2>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.752516590613!2d76.82165859155768!3d43.23564819667334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369df8337f677%3A0x1573d43498f5594e!2zQWtzYWktM0EgTWljcm8gRGlzdHJpY3QsINCQ0LvQvNCw0YLQuCwg0JrQsNC30LDRhdGB0YLQsNC9!5e0!3m2!1suk!2sua!4v1722586056710!5m2!1suk!2sua"
+                        width="720" height="420" style="border-radius: 10px;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="location">
+                        <div class="location__icon">
+                            <img src="{% static 'core/images/map.svg' %}" alt="">
+                        </div>
+                        <div class="location__text">
+                            <p>Аксай-3а, 62ф, Алматы, Казахстан</p>
+                            <p class="location__gray-text">3 этаж 35 кабинет</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-container__social-links">
+                    <div class="social-links-icons">
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <svg class="social-link" width="30px" height="30px">
+                                <use href="{% static 'core/images/icons.svg' %}#icon-instagram">
+                                </use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="social-links-icons">
+                        <a href="https://web.telegram.org/" target="_blank">
+                            <svg class="social-link" width="30px" height="30px">
+                                <use href="{% static 'core/images/icons.svg' %}#icon-telegram">
+                                </use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="social-links-icons">
+
+                        <a href="https://web.whatsapp.com/" target="_blank">
+                            <svg class="social-link" width="30px" height="30px">
+                                <use href="{% static 'core/images/icons.svg' %}#icon-whatsapp">
+                                </use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

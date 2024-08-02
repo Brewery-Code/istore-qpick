@@ -940,4 +940,51 @@ main {
   .product-button .big-btn {
     flex: 1 1 215px;
   }
+}
+.contact-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.contact-container__content {
+  display: flex;
+  gap: 60px;
+}
+.contact-container__map {
+  width: 760px;
+  height: 554px;
+  padding: 15px 19px 27px 17px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.contact-container__map-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.contact-container .location {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+  align-items: center;
+}
+.contact-container .location__text {
+  font-size: 15px;
+  font-weight: 500;
+}
+.contact-container .location__gray-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #838383;
+}
+.contact-container__social-link {
+  display: block;
+  gap: 14px;
+}
+.contact-container .social-links-icons {
+  background-color: #ffffff;
+  width: 97px;
+  height: 97px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=main.css.map */

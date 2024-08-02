@@ -25,7 +25,7 @@ def about(request):
 
 
 def contact(request):
-    return HttpResponse("Contact page")
+    return render(request, 'core/contact.html')
 
 
 def cart(request):
