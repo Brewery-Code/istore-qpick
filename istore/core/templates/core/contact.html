@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block main %}
-<section>
+<section class="contact-section">
     <div class="container">
         <div class="contact-container">
             <div class="contact-container__content">
@@ -14,7 +14,7 @@
                     </iframe>
                     <div class="location">
                         <div class="location__icon">
-                            <img src="{% static 'core/images/map.svg' %}" alt="">
+                            <img src="{% static 'core/images/map.svg' %}" alt="#" width="20px" height="22px">
                         </div>
                         <div class="location__text">
                             <p>Аксай-3а, 62ф, Алматы, Казахстан</p>
@@ -23,32 +23,38 @@
                     </div>
                 </div>
                 <div class="contact-container__social-links">
-                    <div class="social-links-icons">
+                    <div class="social-links-block">
                         <a href="https://www.instagram.com/" target="_blank">
-                            <svg class="social-link" width="30px" height="30px">
+                            <svg class="social-links-block__icons" width="39px" height="39px">
                                 <use href="{% static 'core/images/icons.svg' %}#icon-instagram">
                                 </use>
                             </svg>
                         </a>
                     </div>
-                    <div class="social-links-icons">
+                    <div class="social-links-block">
                         <a href="https://web.telegram.org/" target="_blank">
-                            <svg class="social-link" width="30px" height="30px">
+                            <svg class="social-links-block__icons" width="39px" height="39px">
                                 <use href="{% static 'core/images/icons.svg' %}#icon-telegram">
                                 </use>
                             </svg>
                         </a>
                     </div>
-                    <div class="social-links-icons">
+                    <div class="social-links-block">
 
                         <a href="https://web.whatsapp.com/" target="_blank">
-                            <svg class="social-link" width="30px" height="30px">
+                            <svg class="social-links-block__icons" width="39px" height="39px">
                                 <use href="{% static 'core/images/icons.svg' %}#icon-whatsapp">
                                 </use>
                             </svg>
                         </a>
                     </div>
                 </div>
+            </div>
+            <div class="contact-container__phone">
+                <a href="tel:+77777777777"><img src="{% static 'core/images/icon-phone.svg' %}" alt="#" width="30px"
+                        height="30px">
+                </a>
+                <a class="contact-container__phone-link" href="tel:+77777777777">+7 777 777 77 77</a>
             </div>
         </div>
     </div>

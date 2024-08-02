@@ -941,6 +941,10 @@ main {
     flex: 1 1 215px;
   }
 }
+.contact-section {
+  margin-top: 27px;
+}
+
 .contact-container {
   max-width: 900px;
   margin: 0 auto;
@@ -977,14 +981,30 @@ main {
   font-weight: 500;
   color: #838383;
 }
-.contact-container__social-link {
+.contact-container__social-links {
   display: block;
-  gap: 14px;
 }
-.contact-container .social-links-icons {
+.contact-container .social-links-block {
+  position: relative;
   background-color: #ffffff;
   width: 97px;
   height: 97px;
   border-radius: 30px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  margin-bottom: 14px;
+}
+.contact-container .social-links-block__icons {
+  position: absolute;
+  top: 29px;
+  left: 29px;
+}
+.contact-container__phone {
+  display: flex;
+  gap: 28px;
+  margin: 44px 0;
+}
+.contact-container__phone-link {
+  font-size: 25px;
+  font-weight: 600;
+  color: #000000;
 }/*# sourceMappingURL=main.css.map */
