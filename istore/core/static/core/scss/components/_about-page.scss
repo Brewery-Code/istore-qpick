@@ -3,8 +3,8 @@
 
     .about-block {
         &__content {
-            width: 1107px;
-            height: 162px;
+            max-width: 1107px;
+            min-height: 162px;
             padding: 15px 30px;
             background-color: $section-background-color;
             margin-bottom: 33px;
@@ -24,4 +24,15 @@
             margin: 0 14px;
         }
     }
+}
+
+@media (max-width: 1120px) {
+    .about-container {
+        padding: 0 15px;
+
+        .about-block {
+            &__content {}
+        }
+    }
+
 }
