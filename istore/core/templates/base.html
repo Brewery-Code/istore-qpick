@@ -112,10 +112,12 @@
                         </nav>
                     </div>
                     <div class="header-container__right-content right-content">
-                        <a href="" class="right-content__img"><img src="{% static 'core/images/like.svg' %}" alt=""
-                                width="22px" height="20px"></a>
-                        <a href="" class="right-content__img"><img src="{% static 'core/images/basket-icon.svg' %}"
-                                alt=""></a>
+                        <a href="" class="right-content__img">
+                            <img src="{% static 'core/images/like.svg' %}" alt="" width="22px" height="20px">
+                        </a>
+                        <a href="{% url 'basket' %}" class="right-content__img">
+                            <img src="{% static 'core/images/basket-icon.svg' %}" alt="">
+                        </a>
                         <button class="right-content__burger-btn">
                             <span class="right-content__burger-item"></span>
                             <span class="right-content__burger-item"></span>
@@ -156,7 +158,7 @@
 
                             <ul class="footer-content__menu">
                                 <li><a class="footer-content__menu-item" href="{% url 'selected' %}">Избранное</a></li>
-                                <li><a class="footer-content__menu-item" href="{% url 'cart' %}">Корзина</a></li>
+                                <li><a class="footer-content__menu-item" href="{% url 'basket' %}">Корзина</a></li>
                                 <li><a class="footer-content__menu-item" href="{% url 'contact' %}">Контакты</a></li>
                             </ul>
 

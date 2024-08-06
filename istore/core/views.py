@@ -29,7 +29,7 @@ def contact(request):
 
 
 def cart(request):
-    return HttpResponse("Cart page")
+    return render(request, 'core/basket.html')
 
 
 def selected(request):
