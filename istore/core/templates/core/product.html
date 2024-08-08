@@ -5,6 +5,30 @@
     <div class="product">
         <div class="product__title">{{product.category}}</div>
         <div class="product__body">
+            <div class="user-response">
+                <div class="user-response__body">
+                    <div class="user-response__form">
+                        <div class="user-response__close"><span></span><span></span></div>
+                        <div class="user-response__title">Оставьте свой отзыв</div>
+                        <form class="response-form" action="">
+                            <div class="response-form__rating">
+                                <input type="radio" id="star-1" name="rating" value="1" required>
+                                <label for="star-1" title="Оценка «1»"></label>
+                                <input type="radio" id="star-2" name="rating" value="2">
+                                <label for="star-2" title="Оценка «2»"></label>
+                                <input type="radio" id="star-3" name="rating" value="3">
+                                <label for="star-3" title="Оценка «3»"></label>
+                                <input type="radio" id="star-4" name="rating" value="4">
+                                <label for="star-4" title="Оценка «4»"></label>
+                                <input type="radio" id="star-5" name="rating" value="5">
+                                <label for="star-5" title="Оценка «5»"></label>
+                            </div>
+                            <textarea class="response-form__comment" name="" id="" placeholder="Оставьте свой отзыв :)"></textarea>
+                            <button class="response-form__submit" type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
             <div class="product__like">
                 <a href=""><img style="height: 22px; width: 22px;" src="{% static 'core/images/like.svg' %}" alt=""></a>
             </div>
@@ -12,7 +36,19 @@
                 <img src="{{product.image.url}}" alt="">
             </p>
             <div class="product__row">
-                <div class="product__name">{{product.name}}</div>
+                <div class="product__row-left">
+                    <div class="product__name">{{product.name}}</div>
+                    <button class="user-response-btn" id="user-response-btn">
+                        <div class="product__response" data-total-value="">
+                            <div class="product__response-item" data-item-value="5">★</div>
+                            <div class="product__response-item" data-item-value="4">★</div>
+                            <div class="product__response-item" data-item-value="3">★</div>
+                            <div class="product__response-item" data-item-value="2">★</div>
+                            <div class="product__response-item" data-item-value="1">★</div>
+                        </div>
+                    </button>
+                    <div class="product__response-number">{{ product.rating }}</div>
+                </div>
                 <div class="product__price">{{product.price}} $</div>
             </div>
         </div>
@@ -22,8 +58,7 @@
                     <div class="description__title_desktop">Описание и характеристики</div>
                     <summary>
                         <div class="description__title">Описание и характеристики</div>
-                        <img class="description__title-arrow" style="height: 18px; width: 18px;"
-                            src="{% static 'core/images/header-arrow.svg' %}" alt="">
+                        <img class="description__title-arrow" style="height: 18px; width: 18px;" src="{% static 'core/images/header-arrow.svg' %}" alt="">
                     </summary>
                     <div class="details-content">
                         <ul class="description__characteristics">
@@ -31,7 +66,7 @@
                             <li class="description__item">Вага: {{product.weight}}</li>
                             <li class="description__item">Матеріал товару: {{product.material}}</li>
                             <li class="description__item">Захист від води та
-                                пилу:{{product.protection_against_moisture}}
+                                пилу: {{product.protection_against_moisture}}
                             </li>
                             <li class="description__item">Довжина кабелю: {{product.cable_length}}</li>
                             <li class="description__item">Комплектація: {{product.complete_set}}</li>
@@ -53,16 +88,34 @@
                     <summary>
                         <div class="description__title">Отзывы</div>
                         <div class="description__rating">
-                            <p>
-                                <img src="{% static  'core/images/star.svg' %}" alt="">
-                                {{product.rating}}
-                            </p>
-                            <img class="description__title-arrow" style="height: 18px; width: 18px;"
-                                src="{% static 'core/images/header-arrow.svg' %}">
+                            <div class="product__response" data-total-value="">
+                                <div class="product__response-item" data-item-value="5">★</div>
+                                <div class="product__response-item" data-item-value="4">★</div>
+                                <div class="product__response-item" data-item-value="3">★</div>
+                                <div class="product__response-item" data-item-value="2">★</div>
+                                <div class="product__response-item" data-item-value="1">★</div>
+                            </div>
+                            <img class="description__title-arrow" style="height: 18px; width: 18px;" src="{% static 'core/images/header-arrow.svg' %}">
                         </div>
                     </summary>
                     <div class="details-content">
-
+                        <form class="response-form" action="">
+                            <div class="response-form__rating">
+                                <input type="radio" id="star-1_mobile" name="rating" value="1" required>
+                                <label for="star-1_mobile" title="Оценка «1»"></label>
+                                <input type="radio" id="star-2_mobile" name="rating" value="2">
+                                <label for="star-2_mobile" title="Оценка «2»"></label>
+                                <input type="radio" id="star-3_mobile" name="rating" value="3">
+                                <label for="star-3_mobile" title="Оценка «3»"></label>
+                                <input type="radio" id="star-4_mobile" name="rating" value="4">
+                                <label for="star-4_mobile" title="Оценка «4»"></label>
+                                <input type="radio" id="star-5_mobile" name="rating" value="5">
+                                <label for="star-5_mobile" title="Оценка «5»"></label>
+                                Ваша оценка:
+                            </div>
+                            <textarea class="response-form__comment" name="" id="" placeholder="Оставьте свой отзыв :)"></textarea>
+                            <button class="response-form__submit" type="submit">Отправить</button>
+                        </form>
                     </div>
                 </details>
             </div>
