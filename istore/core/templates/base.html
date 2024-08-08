@@ -115,7 +115,7 @@
                         <a href="" class="right-content__img">
                             <img src="{% static 'core/images/like.svg' %}" alt="" width="22px" height="20px">
                         </a>
-                        <a href="{% url 'core:basket' %}" class="right-content__img">
+                        <a href="{% url 'cart:basket' %}" class="right-content__img">
                             <img src="{% static 'core/images/basket-icon.svg' %}" alt="">
                         </a>
                         <button class="right-content__burger-btn">
@@ -159,7 +159,7 @@
                             <ul class="footer-content__menu">
                                 <li><a class="footer-content__menu-item" href="{% url 'core:selected' %}">Избранное</a>
                                 </li>
-                                <li><a class="footer-content__menu-item" href="{% url 'core:basket' %}">Корзина</a></li>
+                                <li><a class="footer-content__menu-item" href="{% url 'cart:basket' %}">Корзина</a></li>
                                 <li><a class="footer-content__menu-item" href="{% url 'core:contact' %}">Контакты</a>
                                 </li>
                             </ul>
