@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="header-container">
                     <div class="header-container__left-content">
-                        <a href="{% url 'home' %}">
+                        <a href="{% url 'core:home' %}">
                             <img src="{% static 'core/images/Logo.svg' %}" alt="">
                         </a>
                         <nav class="menu">
@@ -115,7 +115,7 @@
                         <a href="" class="right-content__img">
                             <img src="{% static 'core/images/like.svg' %}" alt="" width="22px" height="20px">
                         </a>
-                        <a href="{% url 'basket' %}" class="right-content__img">
+                        <a href="{% url 'core:basket' %}" class="right-content__img">
                             <img src="{% static 'core/images/basket-icon.svg' %}" alt="">
                         </a>
                         <button class="right-content__burger-btn">
@@ -151,22 +151,24 @@
                     <div class="footer-content">
                         <div class="footer-content__left-content">
                             <div class="footer-content__logo">
-                                <a href="{% url 'home' %}">
+                                <a href="{% url 'core:home' %}">
                                     <img src="{% static 'core/images/Logo.svg' %}" alt="">
                                 </a>
                             </div>
 
                             <ul class="footer-content__menu">
-                                <li><a class="footer-content__menu-item" href="{% url 'selected' %}">Избранное</a></li>
-                                <li><a class="footer-content__menu-item" href="{% url 'basket' %}">Корзина</a></li>
-                                <li><a class="footer-content__menu-item" href="{% url 'contact' %}">Контакты</a></li>
+                                <li><a class="footer-content__menu-item" href="{% url 'core:selected' %}">Избранное</a>
+                                </li>
+                                <li><a class="footer-content__menu-item" href="{% url 'core:basket' %}">Корзина</a></li>
+                                <li><a class="footer-content__menu-item" href="{% url 'core:contact' %}">Контакты</a>
+                                </li>
                             </ul>
 
                         </div>
                         <div class="footer-content__right-content">
                             <div class="footer-content__info">
                                 <div class="footer-content__conditions">
-                                    <a href="{% url 'about' %}">Условия сервиса</a>
+                                    <a href="{% url 'core:about' %}">Условия сервиса</a>
                                 </div>
                                 <div class="footer-content__lang">
                                     <img src="{% static 'core/images/lang.svg' %}" alt="">

@@ -6,8 +6,8 @@ from core import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),
-    path('cart/', include('cart.urls'))
+    path('', include('core.urls', namespace='core')),
+    path('cart/', include('cart.urls', namespace='cart'))
     
 ]
 
