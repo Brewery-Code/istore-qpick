@@ -28,9 +28,5 @@ def contact(request):
     return render(request, 'core/contact.html')
 
 
-def cart(request):
-    return render(request, 'core/basket.html')
-
-
 def selected(request):
     return HttpResponse("Selected page")
