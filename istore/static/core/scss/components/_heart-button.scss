@@ -6,18 +6,32 @@
     outline: none;
     display: inline-block;
     position: relative;
+    transition: transform 0.3s ease;
 
-    &__icon-like:hover {
-        fill: $hover-link-color;
+    &:hover {
+        transform: scale(1.2);
+    }
 
+    &__icon-like {
+        &:hover {}
+
+        &--active {}
     }
 }
 
 .heart-button img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 18px;
 }
 
-.heart-button img:hover {
-    filter: brightness(0.4);
+.heart-button img:hover {}
+
+@media (max-width: 992px) {
+    .heart-button {
+        transition: none;
+
+        &:hover {
+            transform: none;
+        }
+    }
 }

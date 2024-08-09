@@ -31,8 +31,7 @@
                                         <a href="#">
                                             <div class="cases-container__card">
                                                 <div class="cases-container__img">
-                                                    <img src="{% static 'core/images/mellow-white.jpeg' %}" alt="#"
-                                                        width="151px" height="292px">
+                                                    <img src="{% static 'core/images/mellow-white.jpeg' %}" alt="#" width="151px" height="292px">
                                                 </div>
                                                 <div class="cases-container__card-title">
                                                     <h4>Стеклянные</h4>
@@ -48,8 +47,7 @@
                                         <a href="#">
                                             <div class="cases-container__card">
                                                 <div class="cases-container__img">
-                                                    <img src="{% static 'core/images/mellow-yellow.jpeg' %}" alt="#"
-                                                        width="151px" height="292px">
+                                                    <img src="{% static 'core/images/mellow-yellow.jpeg' %}" alt="#" width="151px" height="292px">
                                                 </div>
                                                 <div class="cases-container__card-title">
                                                     <h4>Силиконовые</h4>
@@ -65,8 +63,7 @@
                                         <a href="#">
                                             <div class="cases-container__card">
                                                 <div class="cases-container__img">
-                                                    <img src="{% static 'core/images/mellow-black.jpeg' %}" alt="#"
-                                                        width="151px" height="292px">
+                                                    <img src="{% static 'core/images/mellow-black.jpeg' %}" alt="#" width="151px" height="292px">
                                                 </div>
                                                 <div class="cases-container__card-title">
                                                     <h4>Кожаные</h4>
@@ -102,10 +99,9 @@
                                             <div class="headphones-block__card-img">
                                                 <div class="headphones-block__card-like">
                                                     <button class="heart-button" type="button">
-                                                        <svg class="heart-button__icon-like" width="20px" height="18px">
-                                                            <use href="{% static 'core/images/icons.svg' %}#icon-like">
-                                                            </use>
-                                                        </svg>
+                                                        <div class="heart-button__icon-like">
+                                                            <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="">
+                                                        </div>
                                                     </button>
                                                 </div>
                                                 <a href="{% url 'core:product' item.slug %}">
@@ -113,15 +109,13 @@
                                                 </a>
                                             </div>
                                             <div class="headphones-block__card-text">
-                                                <a class="headphones-block__card-title"
-                                                    href="{% url 'core:product' item.slug %}">
+                                                <a class="headphones-block__card-title" href="{% url 'core:product' item.slug %}">
                                                     <h4>{{item.name}}</h4>
                                                 </a>
                                                 <p class="headphones-block__card-price">{{item.price}} $</p>
                                                 <div class="headphones-block__star-rating">
                                                     <span class="headphones-block__card-star">&#9733;</span>
-                                                    <span
-                                                        class="headphones-block__card-rating-value">{{item.rating}}</span>
+                                                    <span class="headphones-block__card-rating-value">{{item.rating}}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -156,10 +150,9 @@
                                             <div class="headphones-block__card-img">
                                                 <div class="headphones-block__card-like">
                                                     <button class="heart-button" type="button">
-                                                        <svg class="heart-button__icon-like" width="20px" height="18px">
-                                                            <use href="{% static 'core/images/icons.svg' %}#icon-like">
-                                                            </use>
-                                                        </svg>
+                                                        <div class="heart-button__icon-like">
+                                                            <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="">
+                                                        </div>
                                                     </button>
                                                 </div>
                                                 <a href="{% url 'core:product' item.slug %}">
@@ -167,15 +160,13 @@
                                                 </a>
                                             </div>
                                             <div class="headphones-block__card-text">
-                                                <a class="headphones-block__card-title"
-                                                    href="{% url 'core:product' item.slug %}">
+                                                <a class="headphones-block__card-title" href="{% url 'core:product' item.slug %}">
                                                     <h4>{{item.name}}</h4>
                                                 </a>
                                                 <p class="headphones-block__card-price">{{item.price}} $</p>
                                                 <div class="headphones-block__star-rating">
                                                     <span class="headphones-block__card-star">&#9733;</span>
-                                                    <span
-                                                        class="headphones-block__card-rating-value">{{item.rating}}</span>
+                                                    <span class="headphones-block__card-rating-value">{{item.rating}}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -191,4 +182,5 @@
         </div>
     </div>
 </section>
+<script src="{% static 'core/js/like.js' %}"></script>
 {% endblock %}

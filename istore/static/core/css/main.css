@@ -205,7 +205,7 @@ main {
   position: relative;
   z-index: 10;
   padding: 20px 0 20px 0;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
@@ -700,20 +700,24 @@ main {
   outline: none;
   display: inline-block;
   position: relative;
+  transition: transform 0.3s ease;
 }
-.heart-button__icon-like:hover {
-  fill: #ffa542;
+.heart-button:hover {
+  transform: scale(1.2);
 }
-
 .heart-button img {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 18px;
 }
 
-.heart-button img:hover {
-  filter: brightness(0.4);
+@media (max-width: 992px) {
+  .heart-button {
+    transition: none;
+  }
+  .heart-button:hover {
+    transform: none;
+  }
 }
-
 .product__title {
   font-weight: 600;
   font-size: 20px;
@@ -728,6 +732,21 @@ main {
 }
 .product__like {
   padding: 20px 0 0 24px;
+}
+.product__like img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.product__like img:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 992px) {
+  .product__like img {
+    transition: none;
+  }
+  .product__like img:hover {
+    transform: none;
+  }
 }
 .product__img {
   text-align: center;

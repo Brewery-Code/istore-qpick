@@ -62,3 +62,13 @@ userResponsMenu.querySelector('.user-response__close').addEventListener('click',
     userResponsMenu.style.opacity = '0';
     console.log('test')
 })
+
+
+const like = document.querySelector('.product__like').querySelector('img');
+like.addEventListener('click', () => {
+    if (like.getAttribute('src') == '/static/core/images/like.svg') {
+        like.setAttribute('src', '/static/core/images/like-active.svg');
+    } else {
+        like.setAttribute('src', '/static/core/images/like.svg');
+    }
+})
