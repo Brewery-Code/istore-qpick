@@ -1419,4 +1419,8 @@ main {
 }
 .basket__back-button:hover {
   transform: scale(1.2);
+}
+
+.cart-container__item-main {
+  display: flex;
 }/*# sourceMappingURL=main.css.map */
