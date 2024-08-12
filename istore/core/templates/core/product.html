@@ -23,8 +23,7 @@
                                 <input type="radio" id="star-5" name="rating" value="5">
                                 <label for="star-5" title="Оценка «5»"></label>
                             </div>
-                            <textarea class="response-form__comment" name="" id=""
-                                placeholder="Оставьте свой отзыв :)"></textarea>
+                            <textarea class="response-form__comment" name="" id="" placeholder="Оставьте свой отзыв :)"></textarea>
                             <button class="response-form__submit" type="submit">Отправить</button>
                         </form>
                     </div>
@@ -59,8 +58,7 @@
                     <div class="description__title_desktop">Описание и характеристики</div>
                     <summary>
                         <div class="description__title">Описание и характеристики</div>
-                        <img class="description__title-arrow" style="height: 18px; width: 18px;"
-                            src="{% static 'core/images/header-arrow.svg' %}" alt="">
+                        <img class="description__title-arrow" style="height: 18px; width: 18px;" src="{% static 'core/images/header-arrow.svg' %}" alt="">
                     </summary>
                     <div class="details-content">
                         <ul class="description__characteristics">
@@ -97,8 +95,7 @@
                                 <div class="product__response-item" data-item-value="2">★</div>
                                 <div class="product__response-item" data-item-value="1">★</div>
                             </div>
-                            <img class="description__title-arrow" style="height: 18px; width: 18px;"
-                                src="{% static 'core/images/header-arrow.svg' %}">
+                            <img class="description__title-arrow" style="height: 18px; width: 18px;" src="{% static 'core/images/header-arrow.svg' %}">
                         </div>
                     </summary>
                     <div class="details-content">
@@ -116,15 +113,14 @@
                                 <label for="star-5_mobile" title="Оценка «5»"></label>
                                 Ваша оценка:
                             </div>
-                            <textarea class="response-form__comment" name="" id=""
-                                placeholder="Оставьте свой отзыв :)"></textarea>
+                            <textarea class="response-form__comment" name="" id="" placeholder="Оставьте свой отзыв :)"></textarea>
                             <button class="response-form__submit" type="submit">Отправить</button>
                         </form>
                     </div>
                 </details>
             </div>
             <div class="product-button">
-                <button class="product-button__item">Купить!</button>
+                <button onclick=addToCart(event) class="product-button__item">Купить!</button>
                 <a href="{% url 'cart:cart_add' product.slug %}">
                     <button class="product-button__item basket-batton">
                         <img src="{% static  'core/images/basket-icon.svg' %}" alt="">Добавить в корзину</button>
@@ -139,6 +135,12 @@
                         </use>
                     </svg>
                 </button>
+            </div>
+        </div>
+        <div class="add-to-cart">
+            <div class="add-to-cart__body">
+                <div class="add-to-cart__content">Товар в кошику</div>
+                <div class="add-to-cart__icon"><img width="32" height="32" src="https://img.icons8.com/color/48/checked--v1.png" alt="checked--v1" /></div>
             </div>
         </div>
     </div>

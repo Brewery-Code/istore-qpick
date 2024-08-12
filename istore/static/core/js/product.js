@@ -72,3 +72,14 @@ like.addEventListener('click', () => {
         like.setAttribute('src', '/static/core/images/like.svg');
     }
 })
+
+
+const cartAlert = document.querySelector('.add-to-cart');
+function addToCart(event) {
+    event.target.disabled = true;
+    cartAlert.classList.add('add-to-cart--active');
+    setTimeout(() => {
+        cartAlert.classList.remove('add-to-cart--active');
+        event.target.disabled = false;
+    }, 4000);
+}

@@ -1180,6 +1180,49 @@ main {
     align-items: center;
   }
 }
+.add-to-cart {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  bottom: 0;
+  z-index: 10;
+  transition: bottom 0.3s ease;
+  opacity: 0;
+}
+.add-to-cart__body {
+  background-color: rgba(226, 226, 226, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 15px;
+}
+.add-to-cart__content {
+  font-size: 14px;
+}
+.add-to-cart--active {
+  animation-name: cartAdd;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+}
+@keyframes cartAdd {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(100%);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-300%);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-300%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-300%);
+  }
+}
+
 .about-container {
   margin-top: 44px;
 }
