@@ -1,5 +1,6 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.shortcuts import redirect, render
+from django.urls import reverse
 from core.models import Headphones, Cases
 
 
@@ -39,7 +40,7 @@ def cart_add(request, product_slug):
         cart[product_slug] = quantity
 
     request.session['cart'] = cart
-    return HttpResponse("Product added to cart")
+    return HttpResponse(status=204)
 
 
 def cart_change(request, product_slug):
@@ -63,4 +64,4 @@ def cart_remove(request, product_slug):
         cart.pop(product_slug, None)
 
     request.session['cart'] = cart
-    return HttpResponse("Product removed from cart")
+    return redirect('cart:basket')
