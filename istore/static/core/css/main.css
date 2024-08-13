@@ -166,6 +166,10 @@ main {
 .header-container .right-content__img {
   z-index: -11;
   position: relative;
+  transition: transform 0.3s ease;
+}
+.header-container .right-content__img:hover .right-content__count {
+  transform: scale(1.2);
 }
 .header-container .right-content__count {
   position: absolute;
@@ -180,8 +184,10 @@ main {
   height: 17.5px;
   width: 17.5px;
   border-radius: 50%;
+  transition: transform 0.3s ease;
   text-align: center;
   padding-top: 1px;
+  display: none;
 }
 .header-container .right-content__burger-btn {
   display: flex;

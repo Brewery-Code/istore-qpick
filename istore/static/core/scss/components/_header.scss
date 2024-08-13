@@ -21,6 +21,13 @@
         &__img {
             z-index: -11;
             position: relative;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                .right-content__count {
+                    transform: scale(1.2);
+                }
+            }
         }
 
         &__count {
@@ -36,9 +43,12 @@
             height: 17.5px;
             width: 17.5px;
             border-radius: 50%;
+            transition: transform 0.3s ease;
 
             text-align: center;
             padding-top: 1px;
+
+            display: none;
         }
 
         &__burger-btn {
