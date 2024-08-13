@@ -64,16 +64,6 @@ userResponsMenu.querySelector('.user-response__close').addEventListener('click',
 })
 
 
-const like = document.querySelector('.product__like').querySelector('img');
-like.addEventListener('click', () => {
-    if (like.getAttribute('src') == '/static/core/images/like.svg') {
-        like.setAttribute('src', '/static/core/images/like-active.svg');
-    } else {
-        like.setAttribute('src', '/static/core/images/like.svg');
-    }
-})
-
-
 const cartAlert = document.querySelector('.add-to-cart');
 function addToCart(event) {
     event.target.disabled = true;
@@ -83,3 +73,51 @@ function addToCart(event) {
         event.target.disabled = false;
     }, 4000);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const likeElements = document.querySelectorAll('.product__like');
+
+    function saveLike() {
+        const likedItemIds = Array.from(document.querySelectorAll('.product__like--active')).map(div => div.id);
+        localStorage.setItem('likedItems', JSON.stringify(likedItemIds));
+    }
+
+    function updateLikeStates(likedItems) {
+        likedItems.forEach(id => {
+            const div = document.getElementById(id);
+            if (div) {
+                div.classList.add('product__like--active');
+                const img = div.querySelector('img');
+                if (img) {
+                    img.setAttribute('src', "/static/core/images/like-active.svg");
+                }
+            }
+        });
+    }
+
+    const likedItems = JSON.parse(localStorage.getItem('likedItems')) || [];
+    updateLikeStates(likedItems);
+
+    likeElements.forEach((item) => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            const itemId = item.id;
+
+            if (item.classList.contains('product__like--active')) {
+                img.setAttribute('src', "/static/core/images/like.svg");
+                item.classList.remove('product__like--active');
+            } else {
+                img.setAttribute('src', "/static/core/images/like-active.svg");
+                item.classList.add('product__like--active');
+            }
+            saveLike();
+        });
+    });
+
+    window.addEventListener('storage', (event) => {
+        if (event.key === 'likedItems') {
+            const likedItems = JSON.parse(event.newValue) || [];
+            updateLikeStates(likedItems);
+        }
+    });
+});
