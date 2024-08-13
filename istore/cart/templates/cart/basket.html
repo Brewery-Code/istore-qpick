@@ -4,28 +4,44 @@
 <section class="basket">
     <div class="container">
         {% if cart_items %}
+        <h1 class="cart-title">Корзина</h1>
         <div class="cart-container">
             <div class="cart-container__items">
                 {% for item in cart_items %}
-                <div class="cart-cantainer__item">
+                <div class="cart-container__item">
                     <div class="cart-container__item-main">
-                        <img src="{{item.product.image.url}}" alt="#">
-                        <p>{{item.product.name}}</p>
-                        <p>{{item.product.price}}</p>
-                        <img src="{% static 'core/images/basket-delete.svg' %}" alt="#">
+                        <img class="main-image" src="{{item.product.image.url}}" alt="#" width="146px" height="136px">
+                        <div class="cart-container__main-text">
+                            <p>{{item.product.name}}</p>
+                            <p class="gray">{{item.product.price}}$</p>
+                        </div>
+                        <a href="{% url 'cart:cart_remove' item.product.slug %}">
+                            <img class="cart-delete" src="{% static 'core/images/basket-delete.svg' %}" alt="#"
+                                width="19px" height="17px">
+                        </a>
 
                     </div>
                     <div class="cart-container__item-bottom">
-                        <img src="{% static 'core/images/minus.svg' %}" alt="-">
-                        <p>{{item.quantity}}</p>
-                        <img src="{% static 'core/images/plus.svg' %}" alt="+">
-                        <p>{{item.product.price}}</p>
+                        <button class="plus-button">
+                            <img src="{% static 'core/images/minus.svg' %}" alt="-">
+                        </button>
+                        <p class="item-bottom-text">{{item.quantity}}</p>
+                        <button class="minus-button">
+                            <img src="{% static 'core/images/plus.svg' %}" alt="+">
+                        </button>
+                        <p class="item-bottom-price">{{item.product.price}}$</p>
                     </div>
                 </div>
                 {% endfor %}
             </div>
             <div class="cart-container__data">
-
+                <div class="data-text">
+                    <p>Итого</p>
+                    <p>10000$</p>
+                </div>
+                <a href="#">
+                    <button class="cart-container__data-button">Перейти к оформлению</button>
+                </a>
             </div>
         </div>
         {% else %}
