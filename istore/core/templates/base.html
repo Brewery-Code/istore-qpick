@@ -114,9 +114,15 @@
                     <div class="header-container__right-content right-content">
                         <a href="" class="right-content__img">
                             <img src="{% static 'core/images/like-header.svg' %}" alt="" width="22px" height="20px">
+                            <div class="right-content__count">
+                                <h6></h6>
+                            </div>
                         </a>
                         <a href="{% url 'cart:basket' %}" class="right-content__img">
                             <img src="{% static 'core/images/basket-icon.svg' %}" alt="">
+                            <div class="right-content__count">
+                                <h6>66</h6>
+                            </div>
                         </a>
                         <button class="right-content__burger-btn">
                             <span class="right-content__burger-item"></span>
@@ -124,20 +130,6 @@
                             <span class="right-content__burger-item"></span>
                         </button>
                     </div>
-                    <!-- <div class="header-container__right-content right-content">
-                        <a href="#">
-                            <svg class="right-content__item" width="22px" height="20px">
-                                <use href="{% static 'core/images/icons.svg' %}#icon-like">
-                                </use>
-                            </svg>
-                        </a>
-                        <a href="#">
-                            <svg class="right-content__item" width="23px" height="23px">
-                                <use href="{% static 'core/images/icons.svg' %}#icon-basket">
-                                </use>
-                            </svg>
-                        </a>
-                    </div> -->
                 </div>
             </div>
         </header>

@@ -74,50 +74,47 @@ function addToCart(event) {
     }, 4000);
 }
 
+
+
+
+function saveActiveLike(id) {
+    let likesID = JSON.parse(localStorage.getItem('likesID')) || [];
+    likesID.push(id);
+    localStorage.setItem('likesID', JSON.stringify(likesID));
+}
+
+function deleteActiveLike(id) {
+    let rawLikesID = JSON.parse(localStorage.getItem('likesID')) || [];
+    const likesID = rawLikesID.filter(item => item !== id);
+    localStorage.setItem('likesID', JSON.stringify(likesID));
+}
+
+function togleLike(likeButton) {
+    const img = likeButton.querySelector('img');
+
+    if (likeButton.classList.contains('product__like--active')) {
+        likeButton.classList.remove('product__like--active');
+        img.setAttribute('src', "/static/core/images/like.svg");
+        deleteActiveLike(likeButton.id);
+    } else {
+        likeButton.classList.add('product__like--active');
+        img.setAttribute('src', "/static/core/images/like-active.svg");
+        saveActiveLike(likeButton.id);
+    }
+}
+
+function setLikeStatus(likeButton) {
+    const likesID = JSON.parse(localStorage.getItem('likesID')) || [];
+
+    if (likesID.includes(likeButton.id)) {
+        likeButton.classList.add('product__like--active');
+        console.log();
+        likeButton.querySelector('img').setAttribute('src', "/static/core/images/like-active.svg");
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    const likeElements = document.querySelectorAll('.product__like');
-
-    function saveLike() {
-        const likedItemIds = Array.from(document.querySelectorAll('.product__like--active')).map(div => div.id);
-        localStorage.setItem('likedItems', JSON.stringify(likedItemIds));
-    }
-
-    function updateLikeStates(likedItems) {
-        likedItems.forEach(id => {
-            const div = document.getElementById(id);
-            if (div) {
-                div.classList.add('product__like--active');
-                const img = div.querySelector('img');
-                if (img) {
-                    img.setAttribute('src', "/static/core/images/like-active.svg");
-                }
-            }
-        });
-    }
-
-    const likedItems = JSON.parse(localStorage.getItem('likedItems')) || [];
-    updateLikeStates(likedItems);
-
-    likeElements.forEach((item) => {
-        item.addEventListener('click', () => {
-            const img = item.querySelector('img');
-            const itemId = item.id;
-
-            if (item.classList.contains('product__like--active')) {
-                img.setAttribute('src', "/static/core/images/like.svg");
-                item.classList.remove('product__like--active');
-            } else {
-                img.setAttribute('src', "/static/core/images/like-active.svg");
-                item.classList.add('product__like--active');
-            }
-            saveLike();
-        });
-    });
-
-    window.addEventListener('storage', (event) => {
-        if (event.key === 'likedItems') {
-            const likedItems = JSON.parse(event.newValue) || [];
-            updateLikeStates(likedItems);
-        }
-    });
+    const likeButton = document.querySelector('.product__like');
+    setLikeStatus(likeButton);
+    likeButton.addEventListener('click', () => togleLike(likeButton));
 });

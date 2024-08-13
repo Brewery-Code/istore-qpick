@@ -165,6 +165,23 @@ main {
 }
 .header-container .right-content__img {
   z-index: -11;
+  position: relative;
+}
+.header-container .right-content__count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #ffa542;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: Montserrat;
+  color: rgb(255, 255, 255);
+  height: 17.5px;
+  width: 17.5px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 1px;
 }
 .header-container .right-content__burger-btn {
   display: flex;

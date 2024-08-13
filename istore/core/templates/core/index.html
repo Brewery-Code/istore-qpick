@@ -98,8 +98,8 @@
                                         <div class="headphones-block__card">
                                             <div class="headphones-block__card-img">
                                                 <div class="headphones-block__card-like">
-                                                    <button class="heart-button" type="button">
-                                                        <div class=" heart-button__icon-like" id="{{ item.slug }}">
+                                                    <button class="heart-button" type="button" onclick="setLikeCount()">
+                                                        <div class="heart-button__icon-like" id="{{ item.slug }}">
                                                             <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="">
                                                         </div>
                                                     </button>
