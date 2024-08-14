@@ -1587,4 +1587,37 @@ main {
   background: rgb(16, 16, 16);
   color: #ffffff;
   font-size: 17px;
+}
+
+@media (max-width: 1120px) {
+  .cart-container__data-button {
+    position: absolute;
+    top: 52px;
+    left: 0%;
+    max-width: 236px;
+    height: 65px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+    background: rgb(16, 16, 16);
+    color: #ffffff;
+    font-size: 17px;
+  }
+}
+@media (max-width: 992px) {
+  .cart-block {
+    padding: 0 24px;
+  }
+  .cart-container {
+    gap: 64px;
+  }
+  .cart-container__data {
+    width: 100%;
+    max-width: 348px;
+    height: 114px;
+  }
+  .cart-container__data-button {
+    width: 100%;
+    max-width: 348px;
+    height: 65px;
+  }
 }/*# sourceMappingURL=main.css.map */

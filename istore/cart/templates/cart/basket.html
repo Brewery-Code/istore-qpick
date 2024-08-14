@@ -3,59 +3,62 @@
 {% block main %}
 <section class="basket">
     <div class="container">
-        {% if cart_items %}
-        <h1 class="cart-title">Корзина</h1>
-        <div class="cart-container">
-            <div class="cart-container__items">
-                {% for item in cart_items %}
-                <div class="cart-container__item">
-                    <div class="cart-container__item-main">
-                        <img class="main-image" src="{{item.product.image.url}}" alt="#" width="146px" height="136px">
-                        <div class="cart-container__main-text">
-                            <p>{{item.product.name}}</p>
-                            <p class="gray">{{item.product.price}}$</p>
+        <div class="cart-block">
+            {% if cart_items %}
+            <h1 class="cart-title">Корзина</h1>
+            <div class="cart-container">
+                <div class="cart-container__items">
+                    {% for item in cart_items %}
+                    <div class="cart-container__item">
+                        <div class="cart-container__item-main">
+                            <img class="main-image" src="{{item.product.image.url}}" alt="#" width="146px"
+                                height="136px">
+                            <div class="cart-container__main-text">
+                                <p>{{item.product.name}}</p>
+                                <p class="gray">{{item.product.price}}$</p>
+                            </div>
+                            <a href="{% url 'cart:cart_remove' item.product.slug %}">
+                                <img class="cart-delete" src="{% static 'core/images/basket-delete.svg' %}" alt="#"
+                                    width="19px" height="17px">
+                            </a>
+
                         </div>
-                        <a href="{% url 'cart:cart_remove' item.product.slug %}">
-                            <img class="cart-delete" src="{% static 'core/images/basket-delete.svg' %}" alt="#"
-                                width="19px" height="17px">
-                        </a>
-
+                        <div class="cart-container__item-bottom">
+                            <button class="plus-button">
+                                <img src="{% static 'core/images/minus.svg' %}" alt="-">
+                            </button>
+                            <p class="item-bottom-text">{{item.quantity}}</p>
+                            <button class="minus-button">
+                                <img src="{% static 'core/images/plus.svg' %}" alt="+">
+                            </button>
+                            <p class="item-bottom-price">{{item.product.price}}$</p>
+                        </div>
                     </div>
-                    <div class="cart-container__item-bottom">
-                        <button class="plus-button">
-                            <img src="{% static 'core/images/minus.svg' %}" alt="-">
-                        </button>
-                        <p class="item-bottom-text">{{item.quantity}}</p>
-                        <button class="minus-button">
-                            <img src="{% static 'core/images/plus.svg' %}" alt="+">
-                        </button>
-                        <p class="item-bottom-price">{{item.product.price}}$</p>
+                    {% endfor %}
+                </div>
+                <div class="cart-container__data">
+                    <div class="data-text">
+                        <p>Итого</p>
+                        <p>10000$</p>
                     </div>
+                    <a href="#">
+                        <button class="cart-container__data-button">Перейти к оформлению</button>
+                    </a>
                 </div>
-                {% endfor %}
             </div>
-            <div class="cart-container__data">
-                <div class="data-text">
-                    <p>Итого</p>
-                    <p>10000$</p>
-                </div>
-                <a href="#">
-                    <button class="cart-container__data-button">Перейти к оформлению</button>
-                </a>
-            </div>
-        </div>
-        {% else %}
+            {% else %}
 
-        <div class="basket__body">
-            <div class="basket__basket-img">
-                <p><img width="410" height="315" src="{% static 'core/images/basket-background.svg' %}"
-                        alt="basket-img"></p>
+            <div class="basket__body">
+                <div class="basket__basket-img">
+                    <p><img width="410" height="315" src="{% static 'core/images/basket-background.svg' %}"
+                            alt="basket-img"></p>
+                </div>
+                <div class="basket__title">Корзина пуста</div>
+                <div class="basket__subtitle">Но это никогда не поздно исправить <span>:)</span></div>
+                <a href="{% url 'core:home' %}"><button class="basket__back-button">В каталог товаров</button></a>
             </div>
-            <div class="basket__title">Корзина пуста</div>
-            <div class="basket__subtitle">Но это никогда не поздно исправить <span>:)</span></div>
-            <a href="{% url 'core:home' %}"><button class="basket__back-button">В каталог товаров</button></a>
+            {% endif %}
         </div>
-        {% endif %}
     </div>
 </section>
 {% endblock %}
