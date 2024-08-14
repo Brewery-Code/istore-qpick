@@ -1620,4 +1620,30 @@ main {
     max-width: 348px;
     height: 65px;
   }
+}
+@media (max-width: 650px) {
+  .cart-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .cart-container__items {
+    flex-grow: 1;
+  }
+  .cart-container__data {
+    width: 100%;
+    max-width: none;
+    height: 114px;
+    margin-top: auto;
+  }
+  .cart-container__data-button {
+    width: 100%;
+    max-width: none;
+    height: 65px;
+  }
+}
+@media (max-width: 400px) {
+  .cart-container {
+    font-size: 13px;
+  }
 }/*# sourceMappingURL=main.css.map */

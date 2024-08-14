@@ -118,8 +118,6 @@
 
 @media (max-width: 1120px) {
     .cart-container {
-        // gap: 84px;
-
         &__data-button {
             position: absolute;
             top: 52px;
@@ -157,4 +155,33 @@
     }
 }
 
-@media (max-width: 650px) {}
+@media (max-width: 650px) {
+    .cart-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+
+        &__items {
+            flex-grow: 1;
+        }
+
+        &__data {
+            width: 100%;
+            max-width: none;
+            height: 114px;
+            margin-top: auto;
+        }
+
+        &__data-button {
+            width: 100%;
+            max-width: none;
+            height: 65px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .cart-container {
+        font-size: 13px;
+    }
+}
