@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<section class="like-page">
+    {% if favorite_items %}
+    {% for item in favorite_items %}
+    <p>{{item.name}}</p>
+    {% endfor %}
+    {% endif %}
+</section>
+{% endblock %}

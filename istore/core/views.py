@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from core.models import Headphones, Cases
 
@@ -29,4 +29,50 @@ def contact(request):
 
 
 def selected(request):
-    return HttpResponse("Selected page")
+    favorites = request.session.get('favorites', [])
+
+    headphones = Headphones.objects.filter(slug__in=favorites)
+    cases = Cases.objects.filter(slug__in=favorites)
+
+    favorite_items = []
+    for product in headphones:
+        favorite_items.append(product)
+    for product in cases:
+        favorite_items.append(product)
+
+    context = {
+        'favorite_items': favorite_items
+    }
+
+    return render(request, 'core/like.html', context)
+
+
+def selected_add(request, product_slug):
+    favorites = request.session.get('favorites', [])
+
+    if product_slug not in favorites:
+        favorites.append(product_slug)
+
+    request.session['favorites'] = favorites
+    return HttpResponse(status=204)
+
+
+def selected_remove(request, product_slug):
+    favorites = request.session.get('favorites', [])
+
+    if product_slug in favorites:
+        favorites.remove(product_slug)
+
+    request.session['favorites'] = favorites
+    return redirect(request.META['HTTP_REFERER'])
+
+
+# Передача бд на сторінку лайків.
+# def selected(request):
+#     headphones = Headphones.objects.filter(category__name="Headphones")
+#     cases = Cases.objects.filter(category__name="Cases")
+#     data = {
+#         'headphones': headphones,
+#         'cases': cases
+#     }
+#     return render(request, 'core/like.html', context=data)
