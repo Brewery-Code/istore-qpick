@@ -64,4 +64,5 @@ def cart_remove(request, product_slug):
         cart.pop(product_slug, None)
 
     request.session['cart'] = cart
-    return redirect('cart:basket')
+    # return redirect('cart:basket')
+    return redirect(request.META['HTTP_REFERER'])
