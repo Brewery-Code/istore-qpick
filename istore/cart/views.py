@@ -1,3 +1,4 @@
+import json
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
@@ -43,18 +44,40 @@ def cart_add(request, product_slug):
     return HttpResponse(status=204)
 
 
-def cart_change(request, product_slug):
-    cart = request.session.get('cart', {})
+def cart_change(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        product_slug = data.get('slug')
+        change = int(data.get('quantity', 0))
 
-    quantity = int(request.POST.get('quantity', 1))
-    if quantity > 0:
-        cart[product_slug] = quantity
-    else:
-        
-        cart.pop(product_slug, None)
+        cart = request.session.get('cart', {})
 
-    request.session['cart'] = cart
-    return HttpResponse("Cart updated")
+        try:
+            product = Headphones.objects.get(slug=product_slug)
+        except Headphones.DoesNotExist:
+            try:
+                product = Cases.objects.get(slug=product_slug)
+            except Cases.DoesNotExist:
+                return JsonResponse({'success': False, 'error': 'Product not found'}, status=404)
+
+        if product_slug in cart:
+            new_quantity = cart[product_slug] + change
+            if new_quantity > 0:
+                cart[product_slug] = new_quantity
+            else:
+                cart.pop(product_slug, None)
+        else:
+            if change > 0:
+                cart[product_slug] = change
+
+        request.session['cart'] = cart
+
+        return JsonResponse({
+            'success': True,
+            'new_quantity': cart.get(product_slug, 0)
+        })
+
+    return JsonResponse({'success': False, 'error': 'Invalid request'}, status=400)
 
 
 def cart_remove(request, product_slug):

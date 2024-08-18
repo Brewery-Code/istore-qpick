@@ -24,14 +24,14 @@
 
                         </div>
                         <div class="cart-container__item-bottom">
-                            <button class="plus-button">
+                            <button class="plus-button" data-product-slug="{{ item.product.slug }}">
                                 <img src="{% static 'core/images/minus.svg' %}" alt="-">
                             </button>
-                            <p class="item-bottom-text">{{item.quantity}}</p>
-                            <button class="minus-button">
+                            <p class="item-bottom-text">{{ item.quantity }}</p>
+                            <button class="minus-button" data-product-slug="{{ item.product.slug }}">
                                 <img src="{% static 'core/images/plus.svg' %}" alt="+">
                             </button>
-                            <p class="item-bottom-price">{{item.product.price}}$</p>
+                            <p class="item-bottom-price">{{ item.product.price }}$</p>
                         </div>
                     </div>
                     {% endfor %}
@@ -61,4 +61,7 @@
         </div>
     </div>
 </section>
+<script>
+    const cartChangeUrl = "{% url 'cart:cart_change' %}";
+</script>
 {% endblock %}
