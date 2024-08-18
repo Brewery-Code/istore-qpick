@@ -12,29 +12,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function updateQuantity(productSlug, change) {
-    fetch('/cart/change/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': getCookie('csrftoken')
-        },
-        body: JSON.stringify({
-            'slug': productSlug,
-            'quantity': change
+        fetch('/cart/change/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify({
+                'slug': productSlug,
+                'quantity': change
+            })
         })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            const quantityElement = document.querySelector(`[data-product-slug="${productSlug}"]`).nextElementSibling;
-            if (quantityElement) {
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const quantityElement = document.querySelector(`[data-product-slug="${productSlug}"]`).nextElementSibling;
                 quantityElement.textContent = data.new_quantity;
-            }
-        }
-    })
-    .catch(error => console.error('Error:', error));
-}
 
+                const totalElement = document.querySelector('.cart-total p:last-of-type');
+                if (totalElement) {
+                    const totalPrice = parseFloat(data.total_price);
+                    if (!isNaN(totalPrice)) {
+                        totalElement.textContent = `${totalPrice.toFixed(2)}$`;
+                    }
+                }
+            }
+        });
+    }
 
     function getCookie(name) {
         let cookieValue = null;
@@ -51,3 +55,5 @@ document.addEventListener('DOMContentLoaded', function() {
         return cookieValue;
     }
 });
+
+
