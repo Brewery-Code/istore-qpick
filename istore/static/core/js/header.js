@@ -157,3 +157,36 @@ document.querySelectorAll('details').forEach((el) => {
 
 
 
+function setLikeCount() {
+    const likeCount = document.querySelector('.right-content__img');
+    const likes = JSON.parse(localStorage.getItem('likesID')) || [];
+    const numberOfLikes = likes.length;
+    if (numberOfLikes != 0) {
+        likeCount.querySelector('h6').innerHTML = numberOfLikes;
+        console.log(numberOfLikes);
+        likeCount.querySelector('.right-content__count').style.display = 'block';
+    } else {
+        likeCount.querySelector('.right-content__count').style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setLikeCount();
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.location.pathname === '/selected/' && window.innerWidth <= 992) {
+        const likeIconOff = document.querySelector('.right-content__img');
+        likeIconOff.style.display = 'none';
+
+        const logo = document.querySelector('a');
+        logo.innerHTML = '<span style="margin: 0 0 5px 0;">&LeftAngleBracket;</span><h2>Избранное</h2>';
+        logo.style.color = 'rgb(28, 28, 39)';
+        logo.style.fontSize = '21px';
+        logo.style.display = 'Flex';
+        logo.style.alignItems = 'center';
+        logo.style.gap = '20px';
+    }
+});

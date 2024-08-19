@@ -33,27 +33,12 @@ function setLikeStatus(item) {
     }
 }
 
-function setLikeCount() {
-    const likeCount = document.querySelector('.right-content__img');
-    const likes = JSON.parse(localStorage.getItem('likesID')) || [];
-    const numberOfLikes = likes.length;
-    if (numberOfLikes != 0) {
-        likeCount.querySelector('h6').innerHTML = numberOfLikes;
-        console.log(numberOfLikes);
-        likeCount.querySelector('.right-content__count').style.display = 'block';
-    } else {
-        likeCount.querySelector('.right-content__count').style.display = 'none';
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const likeButtons = document.querySelectorAll('.heart-button__icon-like');
     likeButtons.forEach(item => {
         setLikeStatus(item);
         item.addEventListener('click', () => toggleLike(item));
     });
-
-    setLikeCount();
 });
 
 window.addEventListener('pageshow', (event) => {

@@ -268,7 +268,7 @@
         }
 
         &__title-arrow {
-            transition: all 1s ease;
+            transition: transform 1s ease;
             margin: 0 0 0 10px;
 
             &:last-of-type {
