@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from core.models import Headphones, Cases
+from django.views.decorators.http import require_POST
 
 
 def index(request):
@@ -67,12 +68,4 @@ def selected_remove(request, product_slug):
     return redirect(request.META['HTTP_REFERER'])
 
 
-# Передача бд на сторінку лайків.
-# def selected(request):
-#     headphones = Headphones.objects.filter(category__name="Headphones")
-#     cases = Cases.objects.filter(category__name="Cases")
-#     data = {
-#         'headphones': headphones,
-#         'cases': cases
-#     }
-#     return render(request, 'core/like.html', context=data)
+

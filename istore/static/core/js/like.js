@@ -10,20 +10,6 @@ function deleteActiveLike(id) {
     localStorage.setItem('likesID', JSON.stringify(likesID));
 }
 
-function toggleLike(item) {
-    const img = item.querySelector('img');
-
-    if (item.classList.contains('heart-button__icon-like--active')) {
-        item.classList.remove('heart-button__icon-like--active');
-        img.setAttribute('src', "/static/core/images/like.svg");
-        deleteActiveLike(item.id);
-    } else {
-        item.classList.add('heart-button__icon-like--active');
-        img.setAttribute('src', "/static/core/images/like-active.svg");
-        saveActiveLike(item.id);
-    }
-}
-
 function setLikeStatus(item) {
     const likesID = JSON.parse(localStorage.getItem('likesID')) || [];
 
@@ -47,8 +33,59 @@ window.addEventListener('pageshow', (event) => {
     }
 });
 
+function toggleLike(slug) {
+    const item = document.getElementById(slug);
+
+    if (!item) {
+        console.error(`Element with ID ${slug} not found.`);
+        return;
+    }
+
+    const img = item.querySelector('img');
+
+    if (item.classList.contains('heart-button__icon-like--active')) {
+        fetch(`/selected-remove/${slug}/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken'),
+            }
+        }).then(response => {
+            if (response.ok) {
+                item.classList.remove('heart-button__icon-like--active');
+                img.setAttribute('src', "/static/core/images/like.svg");
+                deleteActiveLike(slug);
+            }
+        });
+    } else {
+        fetch(`/selected-add/${slug}/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken'),
+            }
+        }).then(response => {
+            if (response.ok) {
+                item.classList.add('heart-button__icon-like--active');
+                img.setAttribute('src', "/static/core/images/like-active.svg");
+                saveActiveLike(slug);
+            }
+        });
+    }
+}
 
 
-
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
 
 

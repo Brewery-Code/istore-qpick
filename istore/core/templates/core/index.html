@@ -101,18 +101,13 @@
                                         <div class="headphones-block__card">
                                             <div class="headphones-block__card-img">
                                                 <div class="headphones-block__card-like">
-
-                                                    <button class="heart-button" type="button" onclick="setLikeCount()">
+                                                    <button class="heart-button" type="button"
+                                                        onclick="toggleLike('{{ item.slug }}')">
                                                         <div class="heart-button__icon-like" id="{{ item.slug }}">
-                                                            <a href="{% url 'core:selected_add' item.slug %}">
-                                                                <img width="20px" height="18px"
-                                                                    src="{% static 'core/images/like.svg' %}" alt="">
-                                                            </a>
-                                                            <!-- <img width="20px" height="18px"
-                                                                src="{% static 'core/images/like.svg' %}" alt=""> -->
+                                                            <img width="20px" height="18px"
+                                                                src="{% static 'core/images/like.svg' %}" alt="">
                                                         </div>
                                                     </button>
-
                                                 </div>
                                                 <a href="{% url 'core:product' item.slug %}">
                                                     <img src="{{item.image.url}}" alt="#" width="219px" height="237px">
@@ -134,6 +129,7 @@
                                     </div>
                                 </article>
                             </li>
+
                             {% endfor %}
 
                         </div>
@@ -161,8 +157,9 @@
                                         <div class="headphones-block__card">
                                             <div class="headphones-block__card-img">
                                                 <div class="headphones-block__card-like">
-                                                    <button class="heart-button" type="button">
-                                                        <div class="heart-button__icon-like">
+                                                    <button class="heart-button" type="button"
+                                                        onclick="toggleLike('{{ item.slug }}')">
+                                                        <div class="heart-button__icon-like" id="{{ item.slug }}">
                                                             <img width="20px" height="18px"
                                                                 src="{% static 'core/images/like.svg' %}" alt="">
                                                         </div>

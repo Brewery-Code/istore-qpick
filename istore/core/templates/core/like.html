@@ -7,239 +7,37 @@
         <div class="like-page__title">Избранное</div>
         <div class="like-page__type">Type</div>
         <div class="like-page__list list">
-            <!-- {% for item in favorite_items % -->
-            <div class="list__item item">
-                <img width="57px" height="41px" src="{% static 'core/images/LDNIO.svg' %}" alt="logo-icon"
-                    class="item__logo">
-                <button class="heart-button" type="button" onclick="setLikeCount()">
-                    <div class="heart-button__icon-like" id="{{ item.slug }}">
-                        <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="like-icon">
-                    </div>
-                </button>
-                <img class="item__img" src="{% static 'core/images/test.jpeg' %}" alt="product-img">
-                <div class="item__spec">
-                    <div class="item__name">Name</div>
-                    <div class="item__price">Price $</div>
-                </div>
-                <div class="item__rating">
-                    <div class="item__star">&#9733;</div>
-                    <div class="item__rating-value">5</div>
-                </div>
-            </div>
-            <div class="list__item item">
-                <img width="57px" height="41px" src="{% static 'core/images/LDNIO.svg' %}" alt="logo-icon"
-                    class="item__logo">
-                <button class="heart-button" type="button" onclick="setLikeCount()">
-                    <div class="heart-button__icon-like" id="{{ item.slug }}">
-                        <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="like-icon">
-                    </div>
-                </button>
-                <img class="item__img" src="{% static 'core/images/test.jpeg' %}" alt="product-img">
-                <div class="item__spec">
-                    <div class="item__name">Name</div>
-                    <div class="item__price">Price $</div>
-                </div>
-                <div class="item__rating">
-                    <div class="item__star">&#9733;</div>
-                    <div class="item__rating-value">5</div>
-                </div>
-            </div>
-            <div class="list__item item">
-                <img width="57px" height="41px" src="{% static 'core/images/LDNIO.svg' %}" alt="logo-icon"
-                    class="item__logo">
-                <button class="heart-button" type="button" onclick="setLikeCount()">
-                    <div class="heart-button__icon-like" id="{{ item.slug }}">
-                        <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="like-icon">
-                    </div>
-                </button>
-                <img class="item__img" src="{% static 'core/images/test.jpeg' %}" alt="product-img">
-                <div class="item__spec">
-                    <div class="item__name">Name</div>
-                    <div class="item__price">Price $</div>
-                </div>
-                <div class="item__rating">
-                    <div class="item__star">&#9733;</div>
-                    <div class="item__rating-value">5</div>
-                </div>
-            </div>
-            <div class="list__item item">
-                <img width="57px" height="41px" src="{% static 'core/images/LDNIO.svg' %}" alt="logo-icon"
-                    class="item__logo">
-                <button class="heart-button" type="button" onclick="setLikeCount()">
-                    <div class="heart-button__icon-like" id="{{ item.slug }}">
-                        <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="like-icon">
-                    </div>
-                </button>
-                <img class="item__img" src="{% static 'core/images/test.jpeg' %}" alt="product-img">
-                <div class="item__spec">
-                    <div class="item__name">Name</div>
-                    <div class="item__price">Price $</div>
-                </div>
-                <div class="item__rating">
-                    <div class="item__star">&#9733;</div>
-                    <div class="item__rating-value">5</div>
-                </div>
-            </div>
-            <div class="list__item item">
-                <img width="57px" height="41px" src="{% static 'core/images/LDNIO.svg' %}" alt="logo-icon"
-                    class="item__logo">
-                <button class="heart-button" type="button" onclick="setLikeCount()">
-                    <div class="heart-button__icon-like" id="{{ item.slug }}">
-                        <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="like-icon">
-                    </div>
-                </button>
-                <img class="item__img" src="{% static 'core/images/test.jpeg' %}" alt="product-img">
-                <div class="item__spec">
-                    <div class="item__name">Name</div>
-                    <div class="item__price">Price $</div>
-                </div>
-                <div class="item__rating">
-                    <div class="item__star">&#9733;</div>
-                    <div class="item__rating-value">5</div>
-                </div>
-            </div>
-            <div class="list__item item">
-                <img width="57px" height="41px" src="{% static 'core/images/LDNIO.svg' %}" alt="logo-icon"
-                    class="item__logo">
-                <button class="heart-button" type="button" onclick="setLikeCount()">
-                    <div class="heart-button__icon-like" id="{{ item.slug }}">
-                        <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="like-icon">
-                    </div>
-                </button>
-                <img class="item__img" src="{% static 'core/images/test.jpeg' %}" alt="product-img">
-                <div class="item__spec">
-                    <div class="item__name">Name</div>
-                    <div class="item__price">Price $</div>
-                </div>
-                <div class="item__rating">
-                    <div class="item__star">&#9733;</div>
-                    <div class="item__rating-value">5</div>
-                </div>
-            </div>
-            <!-- {% endfor % -->
-        </div>
-        {% endif %}
-        {% if favorite_items %}
-        <div class="like-page__type">Type</div>
-        <div class="like-page__list list">
-            <!-- {% for item in favorite_items % -->
-            <div class="list__item item">
-                <img width="57px" height="41px" src="{% static 'core/images/LDNIO.svg' %}" alt="logo-icon"
-                    class="item__logo">
-                <button class="heart-button" type="button" onclick="setLikeCount()">
-                    <div class="heart-button__icon-like" id="{{ item.slug }}">
-                        <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="like-icon">
-                    </div>
-                </button>
-                <img class="item__img" src="{% static 'core/images/test.jpeg' %}" alt="product-img">
-                <div class="item__spec">
-                    <div class="item__name">Name</div>
-                    <div class="item__price">Price $</div>
-                </div>
-                <div class="item__rating">
-                    <div class="item__star">&#9733;</div>
-                    <div class="item__rating-value">5</div>
-                </div>
-            </div>
-            <div class="list__item item">
-                <img width="57px" height="41px" src="{% static 'core/images/LDNIO.svg' %}" alt="logo-icon"
-                    class="item__logo">
-                <button class="heart-button" type="button" onclick="setLikeCount()">
-                    <div class="heart-button__icon-like" id="{{ item.slug }}">
-                        <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="like-icon">
-                    </div>
-                </button>
-                <img class="item__img" src="{% static 'core/images/test.jpeg' %}" alt="product-img">
-                <div class="item__spec">
-                    <div class="item__name">Name</div>
-                    <div class="item__price">Price $</div>
-                </div>
-                <div class="item__rating">
-                    <div class="item__star">&#9733;</div>
-                    <div class="item__rating-value">5</div>
-                </div>
-            </div>
-            <div class="list__item item">
-                <img width="57px" height="41px" src="{% static 'core/images/LDNIO.svg' %}" alt="logo-icon"
-                    class="item__logo">
-                <button class="heart-button" type="button" onclick="setLikeCount()">
-                    <div class="heart-button__icon-like" id="{{ item.slug }}">
-                        <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="like-icon">
-                    </div>
-                </button>
-                <img class="item__img" src="{% static 'core/images/test.jpeg' %}" alt="product-img">
-                <div class="item__spec">
-                    <div class="item__name">Name</div>
-                    <div class="item__price">Price $</div>
-                </div>
-                <div class="item__rating">
-                    <div class="item__star">&#9733;</div>
-                    <div class="item__rating-value">5</div>
-                </div>
-            </div>
-            <div class="list__item item">
-                <img width="57px" height="41px" src="{% static 'core/images/LDNIO.svg' %}" alt="logo-icon"
-                    class="item__logo">
-                <button class="heart-button" type="button" onclick="setLikeCount()">
-                    <div class="heart-button__icon-like" id="{{ item.slug }}">
-                        <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="like-icon">
-                    </div>
-                </button>
-                <img class="item__img" src="{% static 'core/images/test.jpeg' %}" alt="product-img">
-                <div class="item__spec">
-                    <div class="item__name">Name</div>
-                    <div class="item__price">Price $</div>
-                </div>
-                <div class="item__rating">
-                    <div class="item__star">&#9733;</div>
-                    <div class="item__rating-value">5</div>
-                </div>
-            </div>
-            <div class="list__item item">
-                <img width="57px" height="41px" src="{% static 'core/images/LDNIO.svg' %}" alt="logo-icon"
-                    class="item__logo">
-                <button class="heart-button" type="button" onclick="setLikeCount()">
-                    <div class="heart-button__icon-like" id="{{ item.slug }}">
-                        <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="like-icon">
-                    </div>
-                </button>
-                <img class="item__img" src="{% static 'core/images/test.jpeg' %}" alt="product-img">
-                <div class="item__spec">
-                    <div class="item__name">Name</div>
-                    <div class="item__price">Price $</div>
-                </div>
-                <div class="item__rating">
-                    <div class="item__star">&#9733;</div>
-                    <div class="item__rating-value">5</div>
-                </div>
-            </div>
-            <div class="list__item item">
-                <img width="57px" height="41px" src="{% static 'core/images/LDNIO.svg' %}" alt="logo-icon"
-                    class="item__logo">
-                <button class="heart-button" type="button" onclick="setLikeCount()">
-                    <div class="heart-button__icon-like" id="{{ item.slug }}">
-                        <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="like-icon">
-                    </div>
-                </button>
-                <img class="item__img" src="{% static 'core/images/test.jpeg' %}" alt="product-img">
-                <div class="item__spec">
-                    <div class="item__name">Name</div>
-                    <div class="item__price">Price $</div>
-                </div>
-                <div class="item__rating">
-                    <div class="item__star">&#9733;</div>
-                    <div class="item__rating-value">5</div>
-                </div>
-            </div>
-            <!-- {% endfor % -->
-        </div>
-        {% else %}
-        <div class="empty">
-            <div class="empty__title">Упс... У вас не має вподобань <span class="empty__smile">:(</span></div>
-            <a href="{% url 'core:home' %}" class="empty__button">Повернутися до вибору</a>
-        </div>
-        {% endif %}
 
-    </div>
+            {% for item in favorite_items %}
+            <div class="list__item item">
+                <img width="57px" height="41px" src="{% static 'core/images/LDNIO.svg' %}" alt="logo-icon"
+                    class="item__logo">
+                <button class="heart-button" type="button" onclick="setLikeCount()">
+                    <div class="heart-button__icon-like" id="{{ item.slug }}">
+                        <a href="{% url 'core:selected_remove' item.slug %}">
+                            <img width="20px" height="18px" src="{% static 'core/images/like.svg' %}" alt="like-icon">
+                        </a>
+                    </div>
+                </button>
+                <img class="item__img" src="{{ item.image.url }}" alt="product-img">
+                <div class="item__spec">
+                    <div class="item__name">{{ item.name }}</div>
+                    <div class="item__price">{{ item.price }} $</div>
+                </div>
+                <div class="item__rating">
+                    <div class="item__star">&#9733;</div>
+                    <div class="item__rating-value">{{ item.rating }}</div>
+                </div>
+            </div>
+            {% endfor %}
+
+            {% else %}
+            <div class="empty">
+                <div class="empty__title">Упс... У вас не має вподобань <span class="empty__smile">:(</span></div>
+                <a href="{% url 'core:home' %}" class="empty__button">Повернутися до вибору</a>
+            </div>
+            {% endif %}
+
+        </div>
 </section>
 {% endblock %}
