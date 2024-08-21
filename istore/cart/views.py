@@ -24,9 +24,13 @@ def cart(request):
         })
         total_price += item_price
 
+    total_items = sum(cart.values())
+    
     context = {
         'cart_items': cart_items,
-        'total_price': total_price
+        'total_price': total_price,
+        'total_items': total_items
+        
     }
 
     return render(request, 'cart/basket.html', context)
