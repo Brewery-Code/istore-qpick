@@ -40,6 +40,7 @@ def selected(request):
         favorite_items.append(product)
     for product in cases:
         favorite_items.append(product)
+        
 
     context = {
         'favorite_items': favorite_items
