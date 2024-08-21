@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const likeButtons = document.querySelectorAll('.heart-button__icon-like');
     likeButtons.forEach(item => {
         setLikeStatus(item);
-        item.addEventListener('click', () => toggleLike(item));
+        // item.addEventListener('click', () => toggleLike(item));
     });
 });
 
@@ -53,7 +53,7 @@ function toggleLike(slug) {
             if (response.ok) {
                 item.classList.remove('heart-button__icon-like--active');
                 img.setAttribute('src', "/static/core/images/like.svg");
-                deleteActiveLike(slug);
+                deleteActiveLike(item.id);
             }
         });
     } else {
@@ -66,7 +66,7 @@ function toggleLike(slug) {
             if (response.ok) {
                 item.classList.add('heart-button__icon-like--active');
                 img.setAttribute('src', "/static/core/images/like-active.svg");
-                saveActiveLike(slug);
+                saveActiveLike(item.id);
             }
         });
     }
