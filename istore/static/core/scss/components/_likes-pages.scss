@@ -47,13 +47,16 @@
         }
 
         &__item {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 10fr 1.5fr auto;
+            justify-content: space-between;
             position: relative;
             padding: 15px 22px 32px 22px;
             max-width: 350px;
             width: 100%;
             max-height: 407px;
+            // height: 407px;
             border-radius: 30px;
             background-color: #fff;
 
@@ -83,8 +86,13 @@
         }
 
         &__img {
-            margin: 0 43px 54px;
+            margin: 0 0 54px 0;
             max-width: 100%;
+            // margin: auto auto 54px;
+            // align-self: stretch;
+            justify-self: center;
+            align-self: center;
+
 
             @media (max-width: 992px) {
                 margin: 0 0 15px;
@@ -108,7 +116,7 @@
         &__rating {
             display: flex;
             gap: 10px;
-            margin: 30px 0 0 0;
+            margin: 5px 0 0 0;
 
             @media (max-width: 992px) {
                 display: none;
@@ -128,10 +136,13 @@
 
     .heart-button {
         position: absolute;
+        top: 15px;
+        left: 22px;
 
         @media (max-width: 992px) {
             right: 26px;
             top: 18px;
+            justify-self: end;
         }
 
         &__icon-like {}

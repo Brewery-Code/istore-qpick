@@ -2,12 +2,14 @@ function saveActiveLike(id) {
     let likesID = JSON.parse(localStorage.getItem('likesID')) || [];
     likesID.push(id);
     localStorage.setItem('likesID', JSON.stringify(likesID));
+    setLikeCount();
 }
 
 function deleteActiveLike(id) {
     let rawLikesID = JSON.parse(localStorage.getItem('likesID')) || [];
     const likesID = rawLikesID.filter(item => item !== id);
     localStorage.setItem('likesID', JSON.stringify(likesID));
+    setLikeCount();
 }
 
 function setLikeStatus(item) {
@@ -35,7 +37,6 @@ window.addEventListener('pageshow', (event) => {
 
 function toggleLike(slug) {
     const item = document.getElementById(slug);
-
     if (!item) {
         console.error(`Element with ID ${slug} not found.`);
         return;

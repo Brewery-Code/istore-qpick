@@ -60,7 +60,6 @@ userResponsMenu.addEventListener('click', closeResponsMenu);
 userResponsMenu.querySelector('.user-response__close').addEventListener('click', () => {
     userResponsMenu.style.display = 'none';
     userResponsMenu.style.opacity = '0';
-    console.log('test')
 })
 
 
@@ -109,7 +108,6 @@ function setLikeStatus(likeButton) {
 
     if (likesID.includes(likeButton.id)) {
         likeButton.classList.add('product__like--active');
-        console.log();
         likeButton.querySelector('img').setAttribute('src', "/static/core/images/like-active.svg");
     }
 }
