@@ -46,8 +46,14 @@
             grid-template-columns: 1fr;
         }
 
-        &__item {
+        a {
             display: grid;
+        }
+
+        &__item {
+            // display: block;
+            display: grid;
+            // display: block;
             grid-template-columns: 1fr;
             grid-template-rows: 10fr 1.5fr auto;
             justify-content: space-between;

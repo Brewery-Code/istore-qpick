@@ -1690,6 +1690,9 @@ main {
     grid-template-columns: 1fr;
   }
 }
+.like-page .list a {
+  display: grid;
+}
 .like-page .list__item {
   display: grid;
   grid-template-columns: 1fr;
