@@ -122,7 +122,7 @@
                         <a href="{% url 'cart:basket' %}" class="right-content__img">
                             <img src="{% static 'core/images/basket-icon.svg' %}" alt="">
                             <div class="right-content__count">
-                                <h6>66</h6>
+                                <h6>{{ total_items }}</h6>
                             </div>
                         </a>
                         <button class="right-content__burger-btn">

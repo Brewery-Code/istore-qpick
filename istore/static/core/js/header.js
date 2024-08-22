@@ -169,8 +169,19 @@ function setLikeCount() {
     }
 }
 
+function setProductCount() {
+    const productCount = document.querySelector('.right-content__img:nth-child(2)');
+    const numberOfProductCount = productCount.querySelector('h6').innerHTML;
+    if (numberOfProductCount != 0) {
+        productCount.querySelector('.right-content__count').style.display = 'block';
+    } else {
+        productCount.querySelector('.right-content__count').style.display = 'none';
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     setLikeCount();
+    setProductCount();
 });
 
 

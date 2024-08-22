@@ -65,6 +65,7 @@ userResponsMenu.querySelector('.user-response__close').addEventListener('click',
 
 const cartAlert = document.querySelector('.add-to-cart');
 function addToCart(event) {
+    setProductCountPlusOne();
     event.target.disabled = true;
     cartAlert.classList.add('add-to-cart--active');
     setTimeout(() => {
@@ -72,6 +73,19 @@ function addToCart(event) {
         event.target.disabled = false;
     }, 4000);
 }
+
+function setProductCountPlusOne() {
+    const productCount = document.querySelector('.right-content__img:nth-child(2)');
+    let numberOfProductCount = parseInt(productCount.querySelector('h6').innerHTML);
+    numberOfProductCount += 1;
+    if (numberOfProductCount != 0) {
+        productCount.querySelector('h6').innerHTML = numberOfProductCount;
+        productCount.querySelector('.right-content__count').style.display = 'block';
+    } else {
+        productCount.querySelector('.right-content__count').style.display = 'none';
+    }
+};
+
 
 
 
@@ -117,3 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setLikeStatus(likeButton);
     likeButton.addEventListener('click', () => togleLike(likeButton));
 });
+
+
+
