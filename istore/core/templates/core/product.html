@@ -124,7 +124,9 @@
                 </details>
             </div>
             <div class="product-button">
-                <button class="product-button__item">Купить!</button>
+                <a href="{% url 'core:order_page' %}">
+                    <button class="product-button__item">Купить!</button>
+                </a>
                 <a href="{% url 'cart:cart_add' product.slug %}">
                     <button onclick=addToCart(event) class="product-button__item basket-batton">
                         <img src="{% static  'core/images/basket-icon.svg' %}" alt="">Добавить в корзину</button>

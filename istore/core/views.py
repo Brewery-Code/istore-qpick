@@ -69,4 +69,8 @@ def selected_remove(request, product_slug):
     return redirect(request.META['HTTP_REFERER'])
 
 
+def order_page(request):
+    return render(request, 'core/order-page.html')
+
+
 

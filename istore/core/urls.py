@@ -11,5 +11,6 @@ urlpatterns = [
     path('selected/', views.selected, name='selected'), #127.0.0.1:8000/selected
     path('product/<slug:product_slug>', views.show_product, name='product'),
     path('selected-add/<slug:product_slug>/', views.selected_add, name='selected_add'),
-    path('selected-remove/<slug:product_slug>/', views.selected_remove, name='selected_remove')
+    path('selected-remove/<slug:product_slug>/', views.selected_remove, name='selected_remove'),
+    path('order-page/', views.order_page, name='order_page')
 ]
