@@ -1,0 +1,218 @@
+.order {
+
+    &__body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        column-gap: 30px;
+        row-gap: 12px;
+        padding: 22px 95px 0 95px;
+        margin-bottom: 60px;
+    }
+
+    &__title {
+        grid-column: 1 / -1;
+    }
+
+    &__delivery {}
+
+    &__confirmation {}
+
+    .delivery {
+        padding: 23px 31px 32px 38px;
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+        &__title {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__type {}
+
+        &__price {}
+
+        &__map {
+            margin-top: 21px;
+
+            iframe {
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+
+        &__subtitle {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        &__city {
+            width: 100%;
+            margin-top: 17px;
+        }
+
+        &__street {
+            margin-top: 10px;
+        }
+
+        &__row {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        &__home {}
+
+        &__entrance {}
+
+        &__flat {
+            margin-top: 10px;
+        }
+
+        input,
+        select {
+            padding: 14px 0px 12px 14px;
+            background-color: rgb(214, 214, 214);
+            color: #000;
+            font-weight: 500;
+            font-family: "Montserrat";
+            line-height: 18px;
+            font-size: 15px;
+            position: relative;
+            border-radius: 15px;
+
+            &::placeholder {
+                color: rgb(142, 142, 142);
+                font-weight: 500;
+                font-family: "Montserrat";
+            }
+        }
+
+        input {
+            &::after {
+                content: "fiwje";
+                background-image: url('/static/core/images/pan.svg');
+                position: absolute;
+                width: 17px;
+                height: 18px;
+                right: 0;
+            }
+        }
+    }
+
+    .confirmation {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &__product {
+            display: flex;
+            flex-direction: column;
+            padding: 15px 8px 13px 20px;
+            background-color: #fff;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+        &__product-title {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        &__product-list {}
+
+        &__payment {}
+
+        &__phone {}
+    }
+
+    .product {
+        position: relative;
+        display: flex;
+        padding: 0 0 0 35px;
+        justify-content: space-between;
+        margin-top: 25px;
+
+        &__number {
+            position: absolute;
+            left: 0;
+        }
+
+        &__name {}
+
+        &__price {
+            margin: 0;
+        }
+    }
+
+    .confirmation-delivery {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 11px;
+        padding: 0 0 0 35px;
+
+        &__title {}
+
+        &__price {}
+    }
+
+    .confirmation-payment {
+        margin-top: 11px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0 0 35px;
+
+        &__title {}
+
+        &__pricw {}
+    }
+
+
+    .payment {
+        background-color: #fff;
+        border-radius: 30px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 19px;
+
+        &__title {}
+
+        &__price {}
+
+        &__type {}
+    }
+
+    .phone {
+        background-color: #fff;
+        padding: 15px 10px 23px 15px;
+        border-radius: 30px;
+
+        &__title {}
+
+        &__number {
+            width: 100%;
+            border-radius: 15px;
+            background-color: rgb(214, 214, 214);
+            height: 45px;
+            margin-top: 28px;
+            padding: 0 10px;
+        }
+    }
+
+    &__submit {
+        background-color: rgb(16, 16, 16);
+        box-shadow: 0 0 20px rgba(67, 216, 84, 0.25);
+        border-radius: 10px;
+        width: 100%;
+        padding: 14px 0;
+        color: #fff;
+    }
+
+}

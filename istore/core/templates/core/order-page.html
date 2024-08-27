@@ -1,5 +1,73 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block main %}
-<h1>Ну здарова, Віталік</h1>
+<section class="order">
+    <div class="container">
+        <form action="">
+            <div class="order__body">
+                <div class="order__title">Оформление заказа</div>
+                <div class="order__delivery delivery">
+                    <div class="delivery__title">
+                        <div class="delivery__type">Доставка курьером</div>
+                        <div class="delivery__price">666 $</div>
+                    </div>
+                    <div class="delivery__map">
+                        <iframe
+                            ssrc="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7341.836653713238!2d-53.672926135475315!3d66.94314644967172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4e905106b6457165%3A0x80cd5c7915dac68a!2sAsummiunut%20Bridge!5e0!3m2!1sru!2sua!4v1724670038620!5m2!1sru!2sua"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="delivery__subtitle"><img width="21px" height="22px" src="{% static 'core/images/map.svg' %}" alt="">Адрес доставки</div>
+                    <select class="delivery__city" name="city" id="" aria-placeholder="Город">
+                        <option value="">Мухосранск</option>
+                        <option value="">Мухосранск</option>
+                        <option value="">Мухосранск</option>
+                    </select>
+                    <input class="delivery__street" type="text" placeholder="Улица / Район">
+                    <div class="delivery__row">
+                        <input class="delivery__home" type="text" placeholder="Дом">
+                        <input class="delivery__entrance" type="text" placeholder="Подъезд">
+                    </div>
+                    <input class="delivery__flat" type="text" placeholder="Квартира">
+                </div>
+                <div class="order__confirmation confirmation">
+                    <div class="confirmation__product">
+                        <div class="confirmation__product-title">Ваш заказ</div>
+                        <div class="confirmation__product-list">
+                            <div class="product">
+                                <div class="product__number">10x</div>
+                                <div class="product__name">Пісюнчик 9 pro MaX</div>
+                                <div class="product__price">300 $</div>
+                            </div>
+                        </div>
+                        <div class="confirmation-delivery">
+                            <div class="confirmation-delivery__title">Доставка</div>
+                            <div class="confirmation-delivery__price">300 $</div>
+                        </div>
+                        <div class="confirmation-payment">
+                            <div class="confirmation-payment__title">К оплате</div>
+                            <div class="confirmation-payment__price">400 $</div>
+                        </div>
+                    </div>
+                    <div class="confirmation__payment payment">
+                        <div class="payment__title">Способ оплаты</div>
+                        <select class="payment__type" name="payment" id="">
+                            <option value="">Натурой</option>
+                            <option value="">БезНал</option>
+                        </select>
+                        <select class="payment__type" name="payment" id="">
+                            <option value="">Єєєєєєєє</option>
+                            <option value="">Нєту</option>
+                        </select>
+                    </div>
+                    <div class="confirmation__phone phone">
+                        <div class="phone__title">Номер получателя</div>
+                        <input class="phone__number" type="number" placeholder="+7 ___ ___ __ __">
+                    </div>
+                    <button class="order__submit" type="submit">Закончить оформление</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
 {% endblock %}
